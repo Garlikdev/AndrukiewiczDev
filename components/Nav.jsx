@@ -3,16 +3,17 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { signIn, signOut, useSession, getProviders } from "next-auth/react"
+import { signOut, useSession } from "next-auth/react"
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid"
+import { usePathname } from "next/navigation"
 
 const Nav = () => {
   const { data: session } = useSession()
-
-  const [providers, setProviders] = useState(null)
   const [toggleDropdown, setToggleDropdown] = useState(false)
 
   const [isDarkMode, setDarkMode] = useState(false)
+
+  const path = usePathname()
 
   const handleDarkModeChange = () => {
     const newDarkMode = !isDarkMode
@@ -48,17 +49,11 @@ const Nav = () => {
     }
   }, [])
 
-  useEffect(() => {
-    const setUpProviders = async () => {
-      const res = await getProviders()
-      setProviders(res)
-    }
-    setUpProviders()
-  }, [])
+  if (path === "/admin") return null
 
   return (
     <nav className='flex-between w-full bg-elo sticky top-0 z-50 drop-shadow-bold h-20 mx-8'>
-      <div className='max-w-[80rem] mx-auto flex duration-500 transition-transform px-16 py-2 flex-between w-full'>
+      <div className='max-w-[80rem] w-[calc(100%-64px)] mx-auto flex duration-500 transition-transform px-16 py-2 flex-between'>
         <div className='flex-center'>
           <Link href='/'>
             <Image
@@ -66,7 +61,7 @@ const Nav = () => {
               alt='logo Elo Studio'
               width={75}
               height={75}
-              className='object-contain'
+              className='object-contain h-20 w-20'
             />
             <p className='logo_text sr-only'>Elo Studio</p>
           </Link>
@@ -148,19 +143,9 @@ const Nav = () => {
             </div>
           ) : (
             <>
-              {providers &&
-                Object.values(providers).map((provider) => (
-                  <button
-                    type='button'
-                    key={provider.name}
-                    onClick={() => {
-                      signIn(provider.id)
-                    }}
-                    className='black_btn'
-                  >
-                    Zaloguj
-                  </button>
-                ))}
+              <Link href='/logowanie' className='black_btn'>
+                <button type='button'>Zaloguj</button>
+              </Link>
             </>
           )}
         </div>
@@ -219,19 +204,9 @@ const Nav = () => {
             </div>
           ) : (
             <>
-              {providers &&
-                Object.values(providers).map((provider) => (
-                  <button
-                    type='button'
-                    key={provider.name}
-                    onClick={() => {
-                      signIn(provider.id)
-                    }}
-                    className='black_btn'
-                  >
-                    Sign in
-                  </button>
-                ))}
+              <Link href='/logowanie' className='black_btn'>
+                <button type='button'>Zaloguj się</button>
+              </Link>
             </>
           )}
         </div>

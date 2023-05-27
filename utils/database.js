@@ -1,26 +1,47 @@
 import mongoose from "mongoose"
 
-let isConnected = false // track the connection
+/** 
+Source : 
+https://github.com/vercel/next.js/blob/canary/examples/with-mongodb-mongoose/utils/dbConnect.js 
+**/
 
-export const connectToDB = async () => {
-  mongoose.set("strictQuery", true)
+const MONGODB_URI = process.env.MONGODB_URI
 
-  if (isConnected) {
-    console.log("MongoDB is already connected")
-    return
+if (!MONGODB_URI) {
+  throw new Error("Please define the MONGODB_URI environment variable")
+}
+
+/**
+ * Global is used here to maintain a cached connection across hot reloads
+ * in development. This prevents connections growing exponentially
+ * during API Route usage.
+ */
+let cached = global.mongoose
+
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null }
+}
+
+async function connectToDB() {
+  if (cached.conn) {
+    return cached.conn
   }
 
-  try {
-    await mongoose.connect(process.env.MONGODB_URI, {
-      dbName: "server561783_elo",
+  if (!cached.promise) {
+    const opts = {
+      dbName: "elo",
       useNewUrlParser: true,
       useUnifiedTopology: true,
-    })
+    }
 
-    isConnected = true
-
-    console.log("MongoDB connected")
-  } catch (error) {
-    console.log(error)
+    cached.promise = await mongoose
+      .connect(MONGODB_URI, opts)
+      .then((mongoose) => {
+        return mongoose
+      })
   }
+  cached.conn = await cached.promise
+  return cached.conn
 }
+
+export default connectToDB

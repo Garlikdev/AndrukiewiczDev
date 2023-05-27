@@ -13,10 +13,12 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang='pl'>
-      <body className='dark:bg-gray-900 flex-center flex-col'>
+      <body className='dark:bg-gray-900 flex-center flex-col text-black dark:text-white'>
         <Provider>
           <Nav />
-          <main className='app mt-16'>{children}</main>
+          <main className='app mt-16 max-w-[80rem] w-[calc(100%-64px)] min-h-screen'>
+            {children}
+          </main>
           <Footer />
         </Provider>
       </body>
