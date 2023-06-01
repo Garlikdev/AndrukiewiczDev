@@ -1,11 +1,12 @@
 import "@styles/globals.css"
 
 import Nav from "@components/Nav"
-import Provider from "@components/Provider"
+import Provider from "@context/Provider"
 import Footer from "@components/Footer"
+import ToasterContext from "@context/ToasterContext"
 
 export const metadata = {
-  title: "Elo Studio",
+  title: "ELO Pokrowce",
   description:
     "Pokrowce na łódki, torby na osprzęt, Foil, Optimist, Cadet, Laser, Hornet, Omega",
 }
@@ -13,10 +14,11 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang='pl'>
-      <body className='dark:bg-gray-900 flex-center flex-col text-black dark:text-white'>
+      <body className='dark:bg-neutral-900 flex-center flex-col text-black dark:text-white'>
         <Provider>
+          <ToasterContext />
           <Nav />
-          <main className='app mt-16 max-w-[80rem] w-[calc(100%-64px)] min-h-screen'>
+          <main className='mt-2 sm:mt-16 w-full max-w-[80rem] h-[calc(100%-64px)] px-1 sm:px-8 md:px-16'>
             {children}
           </main>
           <Footer />

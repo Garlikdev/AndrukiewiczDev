@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
-const page = () => {
+export default async function Dane() {
   const [userData, setUserData] = useState()
   const [isLoading, setIsLoading] = useState(true)
   const { data: session } = useSession()
@@ -47,10 +47,13 @@ const page = () => {
           </button>
         </div>
         <div className='grid grid-cols-3 gap-4'>
-          {userData?.address[0] ? (
+          {userData?.address ? (
             <>
-              {userData?.address.map((address) => (
-                <div className='mt-4 px-4 py-2 border rounded-lg'>
+              {userData?.address?.map((address) => (
+                <div
+                  key={address.line1}
+                  className='mt-4 px-4 py-2 border rounded-lg'
+                >
                   <div className='flex flex-col gap-2'>
                     <div className='flex flex-col gap-2'>
                       <div className='flex flex-row gap-2'>
@@ -84,5 +87,3 @@ const page = () => {
     </div>
   )
 }
-
-export default page

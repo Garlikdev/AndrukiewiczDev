@@ -1,34 +1,43 @@
-import NextAuth from "next-auth"
-import GoogleProvider from "next-auth/providers/google"
+import NextAuth from "next-auth/next"
+import prisma from "../../../(site)/prismadb"
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import CredentialsProvider from "next-auth/providers/credentials"
+import GoogleProvider from "next-auth/providers/google"
+import bcrypt from "bcrypt"
 
-import User from "@models/user"
-import connectToDB from "@utils/database"
-
-const handler = NextAuth({
+export const authOptions = {
+  adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientSecret: process.env.GOOGLE_SECRET,
     }),
     CredentialsProvider({
       name: "credentials",
       credentials: {
-        email: { label: "Email", type: "text", placeholder: "e-mail" },
-        password: { label: "Hasło", type: "password" },
+        email: {
+          label: "E-mail",
+          type: "text",
+          placeholder: "E-mail (wymagane)",
+        },
+        password: { label: "Hasło (wymagane)", type: "password" },
       },
       async authorize(credentials) {
         // check to see if email and password is there
         if (!credentials.email || !credentials.password) {
-          throw new Error("Please enter an email and password")
+          throw new Error("Wprowadź e-mail oraz hasło")
         }
 
         // check to see if user exists
-        const user = await User.findOne({ email: session.user.email })
+        const user = await prisma.user.findUnique({
+          where: {
+            email: credentials.email,
+          },
+        })
 
         // if no user was found
         if (!user || !user?.hashedPassword) {
-          throw new Error("No user found")
+          throw new Error("Użytkownik nie istnieje")
         }
 
         // check to see if password matches
@@ -39,48 +48,98 @@ const handler = NextAuth({
 
         // if password does not match
         if (!passwordMatch) {
-          throw new Error("Incorrect password")
+          throw new Error("Nieprawidłowe hasło")
         }
 
         return user
       },
     }),
   ],
-  secret: process.env.JWT_SECRET,
+  callbacks: {
+    async session({ session, token }) {
+      // check to see if user exists
+      // store the user id from MongoDB to session
+      const sessionUser = await prisma.user.findUnique({
+        where: {
+          email: session.user.email,
+        },
+      })
+      session.user.id = sessionUser.id
+      session.user.role = sessionUser.role
+
+      return session
+    },
+    // async signIn({ account, profile, user, credentials }) {
+    //   try {
+    //     console.log(account)
+    //     console.log(profile)
+    //     console.log(user)
+    //     // check if user already exists
+    //     const userExists = await prisma.user.findUnique({
+    //       where: {
+    //         email: user.email,
+    //       },
+    //     })
+
+    //     // if not, create a new document and save user in MongoDB
+    //     if (!userExists) {
+    //       const fullname = user.name.split(" ")
+    //       await prisma.user.create({
+    //         data: {
+    //           email: user.email,
+    //           name: fullname[0],
+    //           lastName: fullname[1],
+    //         },
+    //       })
+    //     }
+
+    //     return true
+    //   } catch (error) {
+    //     console.log("Error checking if user exists: ", error.message)
+    //     return false
+    //   }
+    // },
+    async jwt({ token, user }) {
+      try {
+        // check if user already exists
+        const userExists = await prisma.user.findUnique({
+          where: {
+            email: token.email,
+          },
+        })
+
+        // if not, create a new document and save user in MongoDB
+        if (!userExists) {
+          await prisma.user.create({
+            data: {
+              email: token.email,
+              name: token.name,
+            },
+          })
+          token.id = user.id
+          return token
+        }
+
+        return {
+          id: userExists._id,
+          email: userExists.email,
+          role: userExists.role,
+        }
+      } catch (error) {
+        console.log("Error checking if user exists: ", error.message)
+        return false
+      }
+    },
+  },
+  pages: {
+    signIn: "/logowanie",
+  },
+  secret: process.env.SECRET,
   session: {
     strategy: "jwt",
   },
   debug: process.env.NODE_ENV === "development",
-  // callbacks: {
-  //   async session({ session }) {
-  //     // store the user id from MongoDB to session
-  //     const sessionUser = await User.findOne({ email: session.user.email })
-  //     session.user.id = sessionUser._id.toString()
+}
 
-  //     return session
-  //   },
-  //   async signIn({ account, profile, user, credentials }) {
-  //     try {
-  //       await connectToDB()
-
-  //       // check if user already exists
-  //       const userExists = await User.findOne({ email: profile.email })
-
-  //       // if not, create a new document and save user in MongoDB
-  //       if (!userExists) {
-  //         await User.create({
-  //           email: profile.email,
-  //           name: profile.name,
-  //         })
-  //       }
-
-  //       return true
-  //     } catch (error) {
-  //       console.log("Error checking if user exists: ", error.message)
-  //       return false
-  //     }
-  //   },
-  // },
-})
-
+const handler = NextAuth(authOptions)
 export { handler as GET, handler as POST }

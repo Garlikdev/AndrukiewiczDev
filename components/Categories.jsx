@@ -8,7 +8,7 @@ const TEXTS = ["pokrowce", "torby", "poszycia"]
 
 const CategoryCardList = ({ data, handleTagClick }) => {
   return (
-    <div className='mt-16 categories_layout'>
+    <div className='mt-0 sm:mt-4 categories_layout'>
       {data.map((category) => (
         <CategoryCard
           key={category.id}
@@ -64,13 +64,13 @@ const Categories = () => {
   ]
 
   return (
-    <section className='categories pt-16'>
-      <h1 className='font-semibold head_text text-center text-black dark:text-white drop-shadow-lg'>
+    <section className='categories pt-8 sm:pt-16'>
+      <h1 className='font-bold text-4xl sm:text-5xl text-center text-black dark:text-white drop-shadow-lg'>
         Jakie
         <span className='orange_gradient text-center'>
           <TextTransition
             springConfig={presets.gentle}
-            className='text-black dark:text-white text-center flex-center'
+            className='text-center flex-center text-black dark:text-white'
           >
             {TEXTS[index % TEXTS.length]}
           </TextTransition>

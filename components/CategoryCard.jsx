@@ -13,7 +13,7 @@ const CategoryCard = ({ category }) => {
             alt='user_image'
             width={250}
             height={250}
-            className='object-contain h-64 w-64 duration-300 ease-in-out group-hover:scale-95'
+            className='object-contain h-32 w-32 sm:h-64 sm:w-64 duration-300 ease-in-out group-hover:scale-95'
           />
           <div className='flex flex-col absolute flex-center text-center mx-auto'>
             <h3 className='font-inter text-white drop-shadow-bold text-2xl font-black duration-300 ease-in-out group-hover:scale-110'>

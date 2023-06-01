@@ -10,7 +10,7 @@ const Footer = () => {
 
   if (path === "/admin") return null
   return (
-    <footer className='relative mt-64 bg-gray-900 text-white w-full'>
+    <footer className='relative mt-8 sm:mt-64 bg-gray-900 text-white w-full'>
       <svg
         className='absolute top-0 w-full h-6 -mt-5 sm:-mt-24 sm:h-24 text-gray-900 drop-shadow-[0px_-60px_40px_rgba(0,0,0,0.5)] -z-10'
         preserveAspectRatio='none'
@@ -21,10 +21,10 @@ const Footer = () => {
           d='M0 22L120 16.7C240 11 480 1.00001 720 0.700012C960 1.00001 1200 11 1320 16.7L1440 22V54H1320C1200 54 960 54 720 54C480 54 240 54 120 54H0V22Z'
         />
       </svg>
-      <div className='mx-auto w-full py-6 lg:py-8 max-w-[80rem] px-16 z-20'>
+      <div className='mx-auto w-full py-6 lg:py-8 max-w-[80rem] px-4 sm:px-16 z-20'>
         <div className='md:flex md:justify-between flex-col'>
-          <div className='grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4'>
-            <div className='mb-6 md:mb-0'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:grid-cols-4'>
+            <div className='mb-6 md:mb-0 flex items-center justify-center sm:justify-start'>
               <Link href='/'>
                 <Image
                   src='/assets/images/logo.png'
@@ -38,8 +38,10 @@ const Footer = () => {
                 </span>
               </Link>
             </div>
-            <div>
-              <h2 className='mb-6 font-semibold uppercase'>Twoje konto</h2>
+            <div className='text-center sm:text-start'>
+              <h2 className='mb-2 sm:mb-6 font-semibold uppercase'>
+                Twoje konto
+              </h2>
               <ul className='flex flex-col gap-2 text-sm'>
                 <li>
                   <Link href='/konto' className='hover:underline'>
@@ -53,8 +55,8 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div>
-              <h2 className='mb-6 text-sm font-semibold uppercase'>
+            <div className='text-center sm:text-start'>
+              <h2 className='mb-2 sm:mb-6 text-sm font-semibold uppercase'>
                 Płatności i dostawa
               </h2>
               <ul className='flex flex-col gap-2 text-sm'>
@@ -75,8 +77,10 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div>
-              <h2 className='mb-6 text-sm font-semibold uppercase'>O nas</h2>
+            <div className='text-center sm:text-start'>
+              <h2 className='mb-2 sm:mb-6 text-sm font-semibold uppercase'>
+                O nas
+              </h2>
               <ul className='flex flex-col gap-2 text-sm'>
                 <li>
                   <Link href='#' className='hover:underline'>
@@ -103,15 +107,18 @@ const Footer = () => {
           </div>
         </div>
         <hr className='my-6 border-orange-300 sm:mx-auto dark:border-teal-300 lg:my-8' />
-        <div className='sm:flex sm:items-center sm:justify-between'>
-          <span className='text-sm text-gray-200 sm:text-center'>
-            © 2023{" "}
-            <Link href='/' className='hover:underline'>
-              Elo Studio
-            </Link>
-            . @Designed by Krzysztofek.
-          </span>
-          <div className='flex mt-4 space-x-6 sm:justify-center sm:mt-0'>
+        <div className='flex items-center flex-col sm:flex-col justify-between'>
+          <div className='flex flex-col text-sm text-gray-200 text-center'>
+            <span>
+              © 2023{" "}
+              <Link href='/' className='hover:underline'>
+                Elo Pokrowce
+              </Link>
+              .
+            </span>
+            <span>Designed by Krzysztofek.</span>
+          </div>
+          <div className='flex mt-4 space-x-6 sm:justify-center'>
             <Link href='#'>
               <svg
                 className='w-5 h-5'
