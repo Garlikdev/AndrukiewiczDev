@@ -88,7 +88,7 @@ export default function Login() {
             <div>
               <button
                 type='submit'
-                className='flex w-full justify-center rounded-full bg-elo px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                className='flex w-full justify-center rounded-full bg-elo px-3 py-1.5 text-sm font-semibold leading-6 text-white hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 shadow-highlight'
               >
                 Zaloguj się
               </button>
@@ -97,19 +97,20 @@ export default function Login() {
           <div className='mt-4'>
             <button
               onClick={() => signIn("google")}
-              className='bg-white text-black w-full rounded-full px-4 py-2 flex flex-row gap-4 items-center justify-center'
+              className='bg-white text-black w-full rounded-full px-4 py-2 flex flex-row gap-4 items-center justify-center hover:bg-red-200 shadow-highlight'
             >
               <Image
-                width={50}
-                height={50}
+                width={15}
+                height={15}
                 alt='Google icon'
+                sizes='3vw'
                 src='/assets/icons/google-login.png'
               />
               <h1>Zaloguj z kontem Google</h1>
             </button>
           </div>
 
-          <p className='mt-10 text-center text-sm text-neutral-500'>
+          <p className='py-5 text-center text-sm text-neutral-500'>
             Nie masz konta?{" "}
             <a
               href='/rejestracja'

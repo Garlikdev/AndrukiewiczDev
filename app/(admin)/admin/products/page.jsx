@@ -1,12 +1,21 @@
+import prisma from "@app/prismadb"
 import { Cog6ToothIcon } from "@heroicons/react/24/outline"
+import Image from "next/image"
 import Link from "next/link"
 
-const Products = async () => {
-  const res = await fetch(`${process.env.PUBLIC_URL}/api/products`, {
-    next: { revalidate: 60 },
+async function Products() {
+  const products = await prisma.product.findMany({
+    include: {
+      category: true,
+      images: true,
+    },
   })
+  return products
+}
 
-  const products = await res.json()
+export default async function Page() {
+  const products = await Products()
+
   return (
     <div className='px-4 py-2'>
       <div className='h-24 flex flex-row justify-between items-center'>
@@ -22,38 +31,55 @@ const Products = async () => {
         <table className='table-auto w-full text-sm text-left text-neutral-500 dark:text-neutral-400'>
           <thead className='text-xs text-neutral-700 uppercase bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-100'>
             <tr>
-              <th scope='col' className='px-6 py-3'>
+              <th scope='col' className='px-4 py-2'>
+                Zdjęcie
+              </th>
+              <th scope='col' className='px-4 py-2'>
                 Nazwa
               </th>
-              <th scope='col' className='px-6 py-3'>
+              <th scope='col' className='px-4 py-2'>
                 Kategoria
               </th>
-              <th scope='col' className='px-6 py-3'>
-                Stan magazynowy
+              <th scope='col' className='px-4 py-2'>
+                Stan
               </th>
-              <th scope='col' className='px-6 py-3'>
+              <th scope='col' className='px-4 py-2'>
                 Czas wysyłki
               </th>
-              <th scope='col' className='px-6 py-3'>
+              <th scope='col' className='px-4 py-2'>
                 Cena
               </th>
-              <th scope='col' className='px-6 py-3'>
+              <th scope='col' className='px-4 py-2'>
                 Aktywny
               </th>
-              <th scope='col' className='px-6 py-3'>
+              <th scope='col' className='px-4 py-2'>
                 Akcje
               </th>
             </tr>
           </thead>
           <tbody>
-            {products.map((product) => (
+            {products?.map((product) => (
               <tr
                 className='bg-white border-b last:border-none dark:bg-neutral-800 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:text-neutral-50'
                 key={product.id}
               >
+                <td className='p-4'>
+                  <Image
+                    src={
+                      product?.images[0].path
+                        ? product.images[0].path
+                        : "/assets/images/products/placeholder.png"
+                    }
+                    alt={product?.name}
+                    width={40}
+                    height={40}
+                    sizes='5vw'
+                    className='object-contain m-auto'
+                  />
+                </td>
                 <td
                   scope='row'
-                  className='px-6 py-4 font-medium text-neutral-900 whitespace-nowrap dark:text-white'
+                  className='p-4 font-medium text-neutral-900 whitespace-nowrap dark:text-white'
                 >
                   <Link
                     href={`/admin/products/edit/${product.id}`}
@@ -62,11 +88,11 @@ const Products = async () => {
                     {product.name}
                   </Link>
                 </td>
-                <td className='px-6 py-4'>{product.category.name}</td>
-                <td className='px-6 py-4'>{product.stock}</td>
-                <td className='px-6 py-4'>{product.timeToDeliver} (dni)</td>
-                <td className='px-6 py-4'>{product.price} zł</td>
-                <td className='px-6 py-4'>
+                <td className='p-4'>{product.category.name}</td>
+                <td className='p-4'>{product.stock}</td>
+                <td className='p-4'>{product.timeToDeliver} (dni)</td>
+                <td className='p-4'>{product.price} zł</td>
+                <td className='p-4'>
                   <label className='relative inline-flex items-center cursor-pointer'>
                     <input
                       type='checkbox'
@@ -78,7 +104,7 @@ const Products = async () => {
                     <div className="w-9 h-5 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-neutral-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-neutral-600 peer-checked:bg-blue-600"></div>
                   </label>
                 </td>
-                <td className='px-6 py-4'>
+                <td className='p-4'>
                   <button className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
                     <Cog6ToothIcon className='w-6 h-6' />
                   </button>
@@ -91,5 +117,3 @@ const Products = async () => {
     </div>
   )
 }
-
-export default Products

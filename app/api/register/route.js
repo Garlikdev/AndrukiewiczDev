@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 import bcrypt from "bcrypt"
 import prisma from "@app/prismadb"
 import jwt from "jsonwebtoken"
+import sendMail from "@components/mail/sendMail"
 
 const { EMAIL_URL } = process.env
 

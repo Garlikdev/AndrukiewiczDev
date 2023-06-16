@@ -10,6 +10,10 @@ export const CartProvider = ({ children }) => {
 
   const router = useRouter()
 
+  useEffect(() => {
+    setCartToState()
+  }, [])
+
   const setCartToState = () => {
     setCart(
       localStorage.getItem("cart")

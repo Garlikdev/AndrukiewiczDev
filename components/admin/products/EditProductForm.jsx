@@ -1,17 +1,15 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 
-export default async function EditProductForm({ params, data }) {
-  const [categories, setCategories] = useState([])
+export default async function EditProductForm({ product, categories }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: data,
+    defaultValues: product,
   })
 
   const onSubmit = (data) => {
@@ -22,34 +20,23 @@ export default async function EditProductForm({ params, data }) {
     console.log(event.target.value)
   }
 
-  useEffect(() => {
-    const fetchCategories = async () => {
-      const res = await fetch(`/api/categories`)
-
-      const data = await res.json()
-      setCategories(data)
-    }
-
-    fetchCategories()
-  }, [])
-
   return (
     <div className='flex flex-col w-full'>
       <div className='w-full px-4 bg-indigo-100 dark:bg-indigo-950 h-32 flex items-center'>
         <div className='flex flex-row items-center gap-4'>
           <Image
             src={
-              data.images[0]?.path
-                ? data.images[0].path
+              product.images[0]?.path
+                ? product.images[0].path
                 : "/assets/images/products/placeholder.png"
             }
-            alt={data.name ? data.name : "Brak zdjęcia kategorii"}
+            alt={product.name ? product.name : "Brak zdjęcia kategorii"}
             width={75}
             height={75}
             className='object-contain rounded-lg bg-white h-16 w-16'
           />
           <span className='text-lg font-bold'>
-            {data.name} ({data.slug})
+            {product.name} - ({product.category.name})
           </span>
         </div>
       </div>

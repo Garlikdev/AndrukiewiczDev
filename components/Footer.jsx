@@ -3,12 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 
-import { usePathname } from "next/navigation"
-
 const Footer = () => {
-  const path = usePathname()
-
-  if (path === "/admin") return null
   return (
     <footer className='relative mt-8 sm:mt-64 bg-neutral-900 text-white w-full'>
       <svg
@@ -22,6 +17,11 @@ const Footer = () => {
         />
       </svg>
       <div className='mx-auto w-full py-6 lg:py-8 max-w-[80rem] px-4 sm:px-16 z-20'>
+        <div>
+          <button className='bg-elo text-white rounded-lg shadow-highlight font-bold uppercase px-4 py-2'>
+            <Link href='/formularz'>Formularz kontaktowy</Link>
+          </button>
+        </div>
         <div className='md:flex md:justify-between flex-col'>
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:grid-cols-4'>
             <div className='mb-6 md:mb-0 flex items-center justify-center sm:justify-start'>

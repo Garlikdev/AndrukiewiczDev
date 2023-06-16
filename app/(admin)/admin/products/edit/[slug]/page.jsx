@@ -1,30 +1,37 @@
-"use client"
-
+import prisma from "@app/prismadb"
 import EditProductForm from "@components/admin/products/EditProductForm"
-import { useEffect, useState } from "react"
+
+async function getProduct(params) {
+  const getProduct = await prisma.product.findUnique({
+    where: {
+      id: params.slug,
+    },
+    include: {
+      category: true,
+      images: true,
+    },
+  })
+  return getProduct
+}
+
+async function getCategories() {
+  const categories = await prisma.productCategory.findMany({
+    include: {
+      product: {
+        select: {
+          name: true,
+        },
+      },
+    },
+  })
+  return categories
+}
 
 const EditProduct = async ({ params }) => {
-  const [data, setData] = useState()
-  const [isLoading, setIsLoading] = useState(true)
+  const product = await getProduct(params)
+  const categories = await getCategories()
 
-  useEffect(() => {
-    const fetchProductsById = async () => {
-      setIsLoading(true)
-      const res = await fetch(`/api/products/productById/${params.slug}`)
-
-      const data = await res.json()
-      setData(data)
-      setIsLoading(false)
-    }
-
-    fetchProductsById()
-  }, [])
-
-  if (isLoading) {
-    return <p>Pobieranie danych...</p>
-  }
-
-  return <EditProductForm data={data} />
+  return <EditProductForm product={product} categories={categories} />
 }
 
 export default EditProduct

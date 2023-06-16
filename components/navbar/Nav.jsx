@@ -3,9 +3,7 @@
 import { useContext } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { signOut, useSession } from "next-auth/react"
-import { UserIcon, LockClosedIcon } from "@heroicons/react/24/solid"
-import { usePathname } from "next/navigation"
+import { useSession } from "next-auth/react"
 import ThemeSwitcher from "../ThemeSwitcher"
 import NavDropdown from "./NavDropdown"
 import { ShoppingBagIcon } from "@heroicons/react/20/solid"
@@ -15,10 +13,6 @@ const Nav = () => {
   const { cart } = useContext(CartContext)
   const cartItems = cart?.cartItems
   const { data: session } = useSession()
-
-  const path = usePathname()
-
-  if (path === "/admin") return null
 
   return (
     <nav className='flex-between w-full bg-elo sticky top-0 z-50 drop-shadow-bold h-20 mx-8'>
@@ -46,9 +40,10 @@ const Nav = () => {
             className='px-3 py-2 flex flex-row items-center text-center bg-white dark:bg-neutral-900 shadow-highlight rounded-full hover:bg-neutral-100 hover:dark:bg-neutral-800'
           >
             <ShoppingBagIcon className='h-6 w-6' />
-            <span className='hidden lg:inline ml-1'>
-              Koszyk (<b>{cartItems?.length || 0}</b>)
-            </span>
+            <span className='hidden lg:inline ml-1'>Koszyk</span>
+            <p className='ml-1'>
+              (<b>{cartItems?.length || 0}</b>)
+            </p>
           </Link>
           <NavDropdown session={session} />
         </div>

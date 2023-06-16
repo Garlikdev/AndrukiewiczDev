@@ -5,7 +5,7 @@ import Provider from "@context/Provider"
 import Footer from "@components/Footer"
 import ToasterContext from "@context/ToasterContext"
 import Theme from "@context/Theme"
-import { GlobalProvider } from "@context/GlobalProvider"
+import GlobalProvider from "@context/GlobalProvider"
 import { Inter } from "next/font/google"
 
 export const metadata = {

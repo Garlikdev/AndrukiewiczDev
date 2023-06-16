@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"
 import { useSession } from "next-auth/react"
 
 export default function Register() {
-  const session = useSession
+  const session = useSession()
   const router = useRouter()
 
   useEffect(() => {

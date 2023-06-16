@@ -158,24 +158,30 @@ const Cart = () => {
                 </article>
               </main>
               <aside className='md:w-1/4'>
-                <article className='shadow-highlight bg-neutral-100 dark:bg-neutral-800 rounded p-3 lg:p-5'>
-                  <ul className='mb-5'>
-                    <li className='text-lg font-bold flex justify-between'>
-                      <span>Łączna kwota</span>
-                      <span>{amountWithoutTax} zł</span>
-                    </li>
-                  </ul>
+                <article className='shadow-highlight bg-neutral-100 dark:bg-neutral-800 rounded p-3 lg:p-5 flex flex-col gap-5'>
+                  <div className='text-lg font-bold flex justify-between'>
+                    <span>Łączna kwota</span>
+                    <span>{amountWithoutTax} zł</span>
+                  </div>
+                  <div className='flex flex-col'>
+                    <span className='py-4'>
+                      W tej chwili zamówienia przyjmujemy tylko mailowo
+                    </span>
+                    <Link
+                      href='/formularz'
+                      className='px-4 py-3 mb-2 flex items-center gap-4 w-full justify-center text-center shadow-highlight bg-green-600 rounded-md hover:bg-green-700 cursor-pointer'
+                    >
+                      Formularz kontaktowy{" "}
+                      <ArrowRightIcon className='w-4 h-4' />
+                    </Link>
 
-                  <a className='px-4 py-3 mb-2 flex items-center gap-4 w-full justify-center text-center shadow-highlight bg-green-600 rounded-md hover:bg-green-700 cursor-pointer'>
-                    Przejdź do dostawy <ArrowRightIcon className='w-4 h-4' />
-                  </a>
-
-                  <Link
-                    href='/'
-                    className='px-4 py-3 inline-block w-full text-center text-green-600 bg-white dark:bg-neutral-900 shadow-highlight rounded-md hover:bg-neutral-100 hover:dark:bg-neutral-700'
-                  >
-                    Powrót do sklepu
-                  </Link>
+                    <Link
+                      href='/'
+                      className='px-4 py-3 inline-block w-full text-center text-green-600 bg-white dark:bg-neutral-900 shadow-highlight rounded-md hover:bg-neutral-100 hover:dark:bg-neutral-700'
+                    >
+                      Powrót do sklepu
+                    </Link>
+                  </div>
                 </article>
               </aside>
             </div>

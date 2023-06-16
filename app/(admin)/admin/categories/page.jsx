@@ -1,11 +1,24 @@
 import { Cog6ToothIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
+import prisma from "@app/prismadb"
 
-const Categories = async () => {
-  const res = await fetch(`${process.env.PUBLIC_URL}/api/categories`)
+async function Categories() {
+  const categories = await prisma.productCategory.findMany({
+    include: {
+      product: {
+        select: {
+          name: true,
+        },
+      },
+    },
+  })
+  return categories
+}
 
-  const categories = await res.json()
+export default async function Page() {
+  const categories = await Categories()
+
   return (
     <div className='px-4 py-2'>
       <div className='h-24 flex flex-row justify-between items-center'>
@@ -21,24 +34,24 @@ const Categories = async () => {
         <table className='table-auto w-full text-sm text-left text-neutral-500 dark:text-neutral-400'>
           <thead className='text-xs text-neutral-700 uppercase bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-100'>
             <tr>
-              <th scope='col' className='px-6 py-3'>
+              <th scope='col' className='px-4 py-4'>
                 Zdjęcie
               </th>
-              <th scope='col' className='px-6 py-3'>
+              <th scope='col' className='px-4 py-4'>
                 Nazwa
               </th>
-              <th scope='col' className='px-6 py-3'>
+              <th scope='col' className='px-4 py-4'>
                 Akcje
               </th>
             </tr>
           </thead>
           <tbody>
-            {categories.map((category) => (
+            {categories?.map((category) => (
               <tr
                 className='bg-white border-b last:border-none dark:bg-neutral-800 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:text-neutral-50'
                 key={category.id}
               >
-                <td className='px-6 py-4 w-8'>
+                <td className='px-4 py-4 w-8'>
                   <Image
                     src={
                       category.image
@@ -48,14 +61,15 @@ const Categories = async () => {
                     alt={
                       category.image ? category.name : "Brak zdjęcia kategorii"
                     }
-                    width={30}
-                    height={30}
-                    className='object-contain'
+                    width={40}
+                    height={40}
+                    sizes='5vw'
+                    className='object-contain m-auto'
                   />
                 </td>
                 <td
                   scope='row'
-                  className='px-6 py-4 font-medium text-neutral-900 whitespace-nowrap dark:text-white'
+                  className='px-4 py-4 font-medium text-neutral-900 whitespace-nowrap dark:text-white'
                 >
                   <Link
                     href={`/admin/categories/edit/${category.id}`}
@@ -64,7 +78,7 @@ const Categories = async () => {
                     {category.name} ({category.product.length})
                   </Link>
                 </td>
-                <td className='px-6 py-4 w-8'>
+                <td className='px-4 py-4 w-8'>
                   <button className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
                     <Cog6ToothIcon className='w-6 h-6' />
                   </button>
@@ -77,5 +91,3 @@ const Categories = async () => {
     </div>
   )
 }
-
-export default Categories
