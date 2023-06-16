@@ -1,14 +1,18 @@
-import Products from "@components/Categories"
+import Categories from "@components/homepage/Categories"
+import Image from "next/image"
 
-export default async function Home() {
+export default async function page() {
   return (
     <section className='w-full flex-center flex-col'>
-      <img
-        src='assets/images/banerhome.webp'
-        alt='baner'
-        className='w-full object-cover rounded-none sm:rounded-xl'
-      />
-      <Products />
+      <div className='relative h-[35rem] w-full'>
+        <Image
+          fill
+          src='/assets/images/banerhome.webp'
+          alt='baner'
+          className='left-0 w-full object-cover rounded-none sm:rounded-xl object-left'
+        />
+      </div>
+      <Categories />
     </section>
   )
 }

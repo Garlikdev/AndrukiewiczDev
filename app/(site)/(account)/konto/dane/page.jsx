@@ -12,7 +12,7 @@ export default async function Dane() {
   const router = useRouter()
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchUser = async () => {
       setIsLoading(true)
       const response = await fetch(`/api/users/${session?.user.id}/data`)
       const data = await response.json()
@@ -20,7 +20,7 @@ export default async function Dane() {
       setIsLoading(false)
     }
 
-    if (session?.user.id) fetchPosts()
+    if (session?.user.id) fetchUser()
   }, [session?.user.id])
 
   if (isLoading) {
@@ -29,16 +29,18 @@ export default async function Dane() {
 
   return (
     <div className='flex flex-col gap-2'>
-      <h1 className='text-2xl text-gray-900 font-medium'>Dane do zamówień</h1>
+      <h1 className='text-2xl text-neutral-900 font-medium'>
+        Dane do zamówień
+      </h1>
       <div className='flex flex-col'>
         <span>
           W tym miejscu znajdziesz zapisane adresy i dane do zamówień.
         </span>
         <span>Dzięki temu nie musisz ich wpisywać w trakcie zakupów.</span>
       </div>
-      <div className='mt-6 border-gray-400 pt-4 flex flex-wrap mb-6 flex-col w-full gap-2'>
+      <div className='mt-6 border-neutral-400 pt-4 flex flex-wrap mb-6 flex-col w-full gap-2'>
         <div className='flex items-center gap-4'>
-          <h2 className='text-xl text-gray-900'>
+          <h2 className='text-xl text-neutral-900'>
             Dane odbiorcy i adres dostawy
           </h2>
           <button className='border px-4 py-2 rounded-full border-elo text-elo flex flex-row gap-2 hover:text-white hover:bg-elo hover:scale-105 ease-in-out transition-all duration-100 hover:shadow-md hover:font-bold'>

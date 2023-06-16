@@ -1,5 +1,5 @@
 import NextAuth from "next-auth/next"
-import prisma from "../../../(site)/prismadb"
+import prisma from "@app/prismadb"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import CredentialsProvider from "next-auth/providers/credentials"
 import GoogleProvider from "next-auth/providers/google"
@@ -11,6 +11,7 @@ export const authOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
+      allowDangerousEmailAccountLinking: true,
     }),
     CredentialsProvider({
       name: "credentials",
@@ -40,6 +41,10 @@ export const authOptions = {
           throw new Error("Użytkownik nie istnieje")
         }
 
+        if (!user.active) {
+          throw new Error("Konto nie zostało aktywowane")
+        }
+
         // check to see if password matches
         const passwordMatch = await bcrypt.compare(
           credentials.password,
@@ -56,9 +61,11 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    async session({ session, token }) {
+    async session({ session }) {
       // check to see if user exists
       // store the user id from MongoDB to session
+
+      // działa credentials i google
       const sessionUser = await prisma.user.findUnique({
         where: {
           email: session.user.email,
@@ -69,36 +76,33 @@ export const authOptions = {
 
       return session
     },
-    // async signIn({ account, profile, user, credentials }) {
-    //   try {
-    //     console.log(account)
-    //     console.log(profile)
-    //     console.log(user)
-    //     // check if user already exists
-    //     const userExists = await prisma.user.findUnique({
-    //       where: {
-    //         email: user.email,
-    //       },
-    //     })
+    async signIn({ user }) {
+      try {
+        // check if user already exists
+        const userExists = await prisma.user.findUnique({
+          where: {
+            email: user.email,
+          },
+        })
 
-    //     // if not, create a new document and save user in MongoDB
-    //     if (!userExists) {
-    //       const fullname = user.name.split(" ")
-    //       await prisma.user.create({
-    //         data: {
-    //           email: user.email,
-    //           name: fullname[0],
-    //           lastName: fullname[1],
-    //         },
-    //       })
-    //     }
+        // if not, create a new document and save user in MongoDB
+        if (!userExists) {
+          const fullname = user.name.split(" ")
+          await prisma.user.create({
+            data: {
+              email: user.email,
+              name: fullname[0],
+              lastName: fullname[1],
+            },
+          })
+        }
 
-    //     return true
-    //   } catch (error) {
-    //     console.log("Error checking if user exists: ", error.message)
-    //     return false
-    //   }
-    // },
+        return true
+      } catch (error) {
+        console.log("Error checking if user exists: ", error.message)
+        return false
+      }
+    },
     async jwt({ token, user }) {
       try {
         // check if user already exists
@@ -134,7 +138,7 @@ export const authOptions = {
   pages: {
     signIn: "/logowanie",
   },
-  secret: process.env.SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
   },

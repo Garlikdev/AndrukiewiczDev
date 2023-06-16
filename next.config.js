@@ -3,6 +3,7 @@ const nextConfig = {
   output: "standalone",
   experimental: {
     serverComponentsExternalPackages: ["mongoose"],
+    serverActions: true,
   },
   images: {
     domains: ["lh3.googleusercontent.com"],

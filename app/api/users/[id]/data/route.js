@@ -1,4 +1,4 @@
-import prisma from "@app/(site)/prismadb"
+import prisma from "@app/prismadb"
 
 // Exclude keys from user
 function exclude(user, keys) {

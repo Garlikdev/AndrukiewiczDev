@@ -1,35 +1,59 @@
-import bcrypt from "bcrypt"
-import prisma from "../../(site)/prismadb"
 import { NextResponse } from "next/server"
+import bcrypt from "bcrypt"
+import prisma from "@app/prismadb"
+import jwt from "jsonwebtoken"
 
-export async function POST(request) {
-  const body = await request.json()
-  const { name, lastName, email, password } = body
+const { EMAIL_URL } = process.env
 
-  if (!name || !lastName || !email || !password) {
-    return new NextResponse("Wypełnij wszystkie pola", { status: 400 })
-  }
+export async function POST(req) {
+  try {
+    const body = await req.json()
+    const { name, lastName, email, password } = body
 
-  const exist = await prisma.user.findUnique({
-    where: {
+    if (!name || !lastName || !email || !password) {
+      return new NextResponse("Wypełnij wszystkie pola", { status: 400 })
+    }
+
+    const exist = await prisma.user.findUnique({
+      where: {
+        email,
+      },
+    })
+
+    if (exist) {
+      return new NextResponse("Konto o podanym adresie już istnieje!", {
+        status: 400,
+      })
+    }
+
+    const newUser = {
       email,
-    },
-  })
-
-  if (exist) {
-    throw new Error("Konto o podanym adresie e-mail już istnieje")
-  }
-
-  const hashedPassword = await bcrypt.hash(password, 10)
-
-  const user = await prisma.user.create({
-    data: {
+      password,
       name,
       lastName,
-      email,
-      hashedPassword,
-    },
-  })
+    }
 
-  return NextResponse.json(user)
+    const activation_token = createActivationToken(newUser)
+
+    const url = `${EMAIL_URL}/aktywacja/${activation_token}`
+    // console.log(url)
+    sendMail(email, url, "Aktywuj konto", "newAccount")
+
+    return new NextResponse(
+      "Link aktywacyjny został wysłany na twój adres email!",
+      {
+        status: 200,
+      }
+    )
+  } catch (err) {
+    return new NextResponse("Nie udało się wysłać maila, spróbuj ponownie!", {
+      status: 400,
+    })
+  }
+}
+
+const createActivationToken = (payload) => {
+  return jwt.sign(payload, process.env.ACTIVATION_TOKEN_SECRET, {
+    expiresIn: "5m",
+  })
 }

@@ -42,11 +42,11 @@ export default async function Ustawienia() {
           <div className='mt-4 px-4 py-2 border border-neutral-400 dark:border-neutral-700 rounded-lg'>
             <div className='flex justify-between'>
               <div className='w-full md:w-1/2 px-3 mb-6'>
-                <label className='block  tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2'>
+                <label className='block  tracking-wide text-neutral-700 dark:text-neutral-200 text-xs font-bold mb-2'>
                   Imię
                 </label>
                 <input
-                  className='appearance-none block w-full bg-white dark:bg-neutral-800 text-gray-700 dark:text-white border border-neutral-400 dark:border-neutral-700 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none focus:border-gray-500'
+                  className='appearance-none block w-full bg-white dark:bg-neutral-800 text-neutral-700 dark:text-white border border-neutral-400 dark:border-neutral-700 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none focus:border-neutral-500'
                   type='text'
                   placeholder='Imię'
                   defaultValue={userData?.name}
@@ -54,11 +54,11 @@ export default async function Ustawienia() {
                 />
               </div>
               <div className='w-full md:w-1/2 px-3 mb-6'>
-                <label className='block  tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2'>
+                <label className='block  tracking-wide text-neutral-700 dark:text-neutral-200 text-xs font-bold mb-2'>
                   Nazwisko
                 </label>
                 <input
-                  className='appearance-none block w-full bg-white dark:bg-neutral-800 text-gray-700 dark:text-white border border-neutral-400 dark:border-neutral-700 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none focus:border-gray-500'
+                  className='appearance-none block w-full bg-white dark:bg-neutral-800 text-neutral-700 dark:text-white border border-neutral-400 dark:border-neutral-700 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none focus:border-neutral-500'
                   type='text'
                   placeholder='Nazwisko'
                   defaultValue={userData?.lastName}
@@ -68,7 +68,7 @@ export default async function Ustawienia() {
             </div>
             <div className='flex justify-end'>
               <button
-                className='appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md mr-3'
+                className='appearance-none bg-neutral-200 text-neutral-900 px-2 py-1 shadow-sm border border-neutral-400 rounded-md mr-3'
                 type='submit'
               >
                 Zapisz zmiany
@@ -76,12 +76,12 @@ export default async function Ustawienia() {
             </div>
           </div>
           <div className='mt-4 px-4 py-2 border border-neutral-400 dark:border-neutral-700 rounded-lg'>
-            <label className='block tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2'>
+            <label className='block tracking-wide text-neutral-700 dark:text-neutral-200 text-xs font-bold mb-2'>
               Adres e-mail
             </label>
             <div className='flex-between'>
               <p>{userData?.email}</p>
-              <a className='text-gray-200'>Zmień</a>
+              <a className='text-neutral-200'>Zmień</a>
             </div>
           </div>
         </div>

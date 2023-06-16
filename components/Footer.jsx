@@ -10,9 +10,9 @@ const Footer = () => {
 
   if (path === "/admin") return null
   return (
-    <footer className='relative mt-8 sm:mt-64 bg-gray-900 text-white w-full'>
+    <footer className='relative mt-8 sm:mt-64 bg-neutral-900 text-white w-full'>
       <svg
-        className='absolute top-0 w-full h-6 -mt-5 sm:-mt-24 sm:h-24 text-gray-900 drop-shadow-[0px_-60px_40px_rgba(0,0,0,0.5)] -z-10'
+        className='absolute top-0 w-full h-6 -mt-5 sm:-mt-12 sm:h-12 text-neutral-900 -z-10'
         preserveAspectRatio='none'
         viewBox='0 0 1440 54'
       >
@@ -25,16 +25,19 @@ const Footer = () => {
         <div className='md:flex md:justify-between flex-col'>
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:grid-cols-4'>
             <div className='mb-6 md:mb-0 flex items-center justify-center sm:justify-start'>
-              <Link href='/'>
+              <Link href='/' className='h-20 w-20 flex relative'>
                 <Image
                   src='/assets/images/logo.png'
-                  alt='logo Elo Studio'
-                  width={75}
-                  height={75}
-                  className='object-contain'
+                  alt='logo ELO Pokrowce'
+                  fill
+                  priority
+                  sizes='(min-width: 60em) 10vw,
+                    (min-width: 28em) 15vw,
+                    25vw'
+                  className='object-contain h-20 w-20'
                 />
                 <span className='self-center text-2xl font-semibold whitespace-nowrap sr-only'>
-                  Elo Studio
+                  Elo Pokrowce
                 </span>
               </Link>
             </div>
@@ -79,9 +82,14 @@ const Footer = () => {
             </div>
             <div className='text-center sm:text-start'>
               <h2 className='mb-2 sm:mb-6 text-sm font-semibold uppercase'>
-                O nas
+                Informacje
               </h2>
               <ul className='flex flex-col gap-2 text-sm'>
+                <li>
+                  <Link href='/regulamin' className='hover:underline'>
+                    Regulamin
+                  </Link>
+                </li>
                 <li>
                   <Link href='#' className='hover:underline'>
                     Kontakt i dane firmy
@@ -108,7 +116,7 @@ const Footer = () => {
         </div>
         <hr className='my-6 border-orange-300 sm:mx-auto dark:border-teal-300 lg:my-8' />
         <div className='flex items-center flex-col sm:flex-col justify-between'>
-          <div className='flex flex-col text-sm text-gray-200 text-center'>
+          <div className='flex flex-col text-sm text-neutral-200 text-center'>
             <span>
               © 2023{" "}
               <Link href='/' className='hover:underline'>
