@@ -7,9 +7,12 @@ import Link from "next/link"
 import { BsLinkedin, BsGithub } from "react-icons/bs"
 import { HiDownload, HiArrowRight } from "react-icons/hi"
 import { useSectionInView } from "@lib/hooks"
+import { useActiveSectionContext } from "@context/active-section-context"
 
 export default function Introduction() {
   const { ref } = useSectionInView("Home", 0.5)
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext()
 
   return (
     <section
@@ -62,6 +65,10 @@ export default function Introduction() {
               <Link
                 href='#contact'
                 className='px-4 py-2 text-xl group font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+                onClick={() => {
+                  setActiveSection("Contact")
+                  setTimeOfLastClick(Date.now())
+                }}
               >
                 Contact{" "}
                 <HiArrowRight className='opacity-80 group-hover:translate-x-1' />
