@@ -12,9 +12,6 @@ module.exports = {
         satoshi: ["Satoshi", "sans-serif"],
         inter: ["Inter", "sans-serif"],
       },
-      colors: {
-        elo: "#660922",
-      },
       dropShadow: {
         bold: "1px 1px 1px #000",
       },
@@ -24,5 +21,11 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  variants: {
+    extend: {
+      width: ["group-hover"],
+      height: ["group-hover"],
+    },
+  },
+  plugins: [],
 }
