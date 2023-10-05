@@ -6,6 +6,7 @@ import { useScroll, motion, useTransform } from "framer-motion"
 import { useRef } from "react"
 import Link from "next/link"
 import { BsGithub, BsLink } from "react-icons/bs"
+import { useActiveSectionContext } from "@context/active-section-context"
 
 type ProjectProps = (typeof projectsData)[number]
 
@@ -25,6 +26,8 @@ export default function Project({
   })
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1])
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext()
   return (
     <motion.section
       style={{ scale: scaleProgress, opacity: opacityProgress }}
@@ -69,9 +72,16 @@ export default function Project({
               Live Demo <BsLink />
             </Link>
           ) : (
-            <button className='px-2 py-1 font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'>
+            <Link
+              href='#contact'
+              onClick={() => {
+                setActiveSection("Contact")
+                setTimeOfLastClick(Date.now())
+              }}
+              className='px-2 py-1 font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+            >
               Ask for more
-            </button>
+            </Link>
           )}
         </div>
       </div>
