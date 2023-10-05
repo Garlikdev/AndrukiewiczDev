@@ -97,8 +97,8 @@ export default function Introduction() {
           >
             <Image
               src={ProfilePicture}
-              width={256}
-              height={256}
+              width={300}
+              height={300}
               quality='95'
               priority={true}
               alt='Profile picture'

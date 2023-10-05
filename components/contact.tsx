@@ -33,6 +33,7 @@ export default function Contact() {
         <div className='flex flex-col sm:flex-row items-center gap-2'>
           <a
             href='mailto:krz.andrukiewicz@gmail.com'
+            aria-label='Contact me via email'
             className='p-3 rounded-full bg-gray-100 dark:bg-gray-900 group'
           >
             <HiMail className='w-12 h-12 text-blue-400 group-hover:text-white transition-colors' />
@@ -41,6 +42,7 @@ export default function Contact() {
             <p className='font-bold text-xl'>Mail</p>
             <a
               href='mailto:krz.andrukiewicz@gmail.com'
+              aria-label='Contact me via email'
               className='text-gray-700 dark:text-gray-400 hover:text-blue-400 hover:underline dark:hover:text-blue-400 transition-colors'
             >
               krz.andrukiewicz@gmail.com
