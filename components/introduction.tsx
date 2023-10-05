@@ -48,6 +48,7 @@ export default function Introduction() {
                 href='https://www.linkedin.com/in/krzysztof-andrukiewicz-135360237/'
                 target='_blank'
                 rel='noreferrer'
+                aria-label='My LinkedIn profile'
                 className='focus:scale-[1.15] hover:scale-110 active:scale-105'
               >
                 <BsLinkedin className='w-8 h-8' />
@@ -56,6 +57,7 @@ export default function Introduction() {
                 href='https://github.com/Andrukiewicz'
                 target='_blank'
                 rel='noreferrer'
+                aria-label='My github profile'
                 className='focus:scale-[1.15] hover:scale-110 active:scale-105'
               >
                 <BsGithub className='w-8 h-8' />
