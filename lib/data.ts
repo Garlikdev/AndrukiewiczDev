@@ -74,6 +74,7 @@ export const projectsData = [
       "MongoDB",
       "Stripe",
     ],
+    available: false,
     siteUrl: "https://3klik.pl/",
     codeUrl: "",
     imageUrl: klikImg,
@@ -83,6 +84,7 @@ export const projectsData = [
     description:
       "E-commerce website for manufacturer of covers for sails, racing boats and accessories. I decided to use PostgreSQL and HotPay for the first time.",
     tags: ["React", "Tailwind", "Node.js", "Express", "Hotpay", "PostgreSQL"],
+    available: true,
     siteUrl: "https://elopokrowce.pl/",
     codeUrl: "",
     imageUrl: eloImg,
@@ -92,6 +94,7 @@ export const projectsData = [
     description:
       "Task manager based on Trello. I used Tailwind for styling and react-beautiful-dnd for drag and drop and animations. Client side with localstorage.",
     tags: ["React", "Next.js", "Tailwind", "Drag & drop"],
+    available: true,
     siteUrl: "https://trollo-self.vercel.app/",
     codeUrl: "https://github.com/Andrukiewicz/todolist",
     imageUrl: kanbanImg,
