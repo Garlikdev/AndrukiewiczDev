@@ -4,9 +4,13 @@ import { useInView } from "react-intersection-observer"
 import { SectionName } from "./types"
 import { useRouter } from "next/navigation"
 
-export function useSectionInView(sectionName: SectionName, threshold = 0.75) {
+export function useSectionInView(
+  sectionName: SectionName,
+  desktopThreshold = 0.5,
+  mobileThreshold = 0.1
+) {
   const { ref, inView } = useInView({
-    threshold,
+    threshold: window.innerWidth < 600 ? mobileThreshold : desktopThreshold,
   })
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext()
   const router = useRouter()
@@ -21,7 +25,15 @@ export function useSectionInView(sectionName: SectionName, threshold = 0.75) {
         element.scrollIntoView()
       }
     }
-  }, [inView, setActiveSection, timeOfLastClick, sectionName, router])
+  }, [
+    inView,
+    setActiveSection,
+    timeOfLastClick,
+    sectionName,
+    router,
+    desktopThreshold,
+    mobileThreshold,
+  ])
 
   return {
     ref,
