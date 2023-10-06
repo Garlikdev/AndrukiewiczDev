@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useActiveSectionContext } from "@context/active-section-context"
 import { useInView } from "react-intersection-observer"
 import { SectionName } from "./types"
@@ -9,11 +9,16 @@ export function useSectionInView(
   desktopThreshold = 0.5,
   mobileThreshold = 0.1
 ) {
+  const [threshold, setThreshold] = useState(desktopThreshold)
   const { ref, inView } = useInView({
-    threshold: window.innerWidth < 600 ? mobileThreshold : desktopThreshold,
+    threshold: threshold,
   })
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext()
   const router = useRouter()
+
+  useEffect(() => {
+    setThreshold(window.innerWidth < 600 ? mobileThreshold : desktopThreshold)
+  }, [desktopThreshold, mobileThreshold])
 
   useEffect(() => {
     if (inView && Date.now() - timeOfLastClick > 1000) {
@@ -25,15 +30,7 @@ export function useSectionInView(
         element.scrollIntoView()
       }
     }
-  }, [
-    inView,
-    setActiveSection,
-    timeOfLastClick,
-    sectionName,
-    router,
-    desktopThreshold,
-    mobileThreshold,
-  ])
+  }, [inView, setActiveSection, timeOfLastClick, sectionName, router])
 
   return {
     ref,
