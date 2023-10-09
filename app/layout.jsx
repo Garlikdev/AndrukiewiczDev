@@ -1,7 +1,7 @@
 import "@styles/globals.css"
 
 import Nav from "@components/navbar/Nav"
-import { Inter } from "next/font/google"
+import { Inter, Open_Sans } from "next/font/google"
 import ActiveSectionContextProvider from "@/context/active-section-context"
 import Footer from "@components/footer"
 
@@ -14,7 +14,7 @@ export const metadata = {
 }
 
 // If loading a variable font, you don't need to specify the font weight
-const inter = Inter({
+const inter = Open_Sans({
   subsets: ["latin"],
   display: "swap",
 })
