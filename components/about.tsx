@@ -17,7 +17,7 @@ export default function About() {
       }}
     >
       <SectionHeading>Hey there!</SectionHeading>
-      <article className='gap-4 flex flex-col'>
+      <article className='gap-4 flex flex-col [text-wrap:balance] text-sm sm:text-base lg:text-lg'>
         <p>
           I've always been{" "}
           <span className='text-green-500 font-bold'>

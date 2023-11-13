@@ -22,7 +22,7 @@ const Nav = () => {
           duration: 0.2,
         }}
       >
-        <div className='rounded-full absolute h-48 w-[40rem] bg-gradient-radial blur-xl left-0 top-0 from-blue-500 opacity-25 rotate-12 to-neutral-900 -z-10'></div>
+        <div className='rounded-full absolute h-48 w-[40rem] bg-gradient-radial blur-xl left-0 top-0 from-indigo-500 opacity-25 dark:opacity-25 rotate-12 to-neutral-900 -z-10'></div>
       </motion.div>
 
       <nav className='flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0 '>

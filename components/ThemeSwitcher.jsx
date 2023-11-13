@@ -53,7 +53,7 @@ const ThemeSwitcher = () => {
           onChange={handleDarkModeChange}
           className='peer sr-only'
         />
-        <div className="peer relative h-7 w-14 rounded-full bg-gray-100 after:absolute after:top-0.5 after:left-[2px] peer-checked:after:left-[5px] after:h-6 after:w-6 after:rounded-full after:bg-neutral-500 after:dark:bg-neutral-700 after:shadow-highlight after:transition-all after:content-[''] peer-checked:bg-neutral-100 peer-checked:dark:bg-gray-800 shadow-inner peer-checked:after:translate-x-full peer-checked:after:border-none">
+        <div className="peer relative h-7 w-14 rounded-full bg-gradient-to-b from-green-600 to-green-400 dark:from-green-800 dark:to-green-700 after:absolute after:top-0.5 after:left-[2px] peer-checked:after:left-[5px] after:h-6 after:w-6 after:rounded-full after:bg-gradient-to-b after:from-indigo-600 after:to-indigo-800 after:shadow-highlight after:transition-all after:content-[''] peer-checked:bg-neutral-100 peer-checked:dark:bg-gray-800 shadow-inner peer-checked:after:translate-x-full">
           {isDarkMode ? (
             <BoltSlashIcon
               className='absolute inline-block h-6 w-6 left-0.5 top-0.5 rounded-full text-neutral-100'

@@ -23,25 +23,33 @@ export default function Introduction() {
       <div className='flex flex-col-reverse sm:flex-row items-center justify-center'>
         <div className='max-w-xl flex flex-col relative'>
           <motion.div
-            className='mb-4 mt-4 text-center gap-4 flex flex-col lg:text-start relative'
+            className='mb-4 mt-4 sm:mt-0 text-center gap-4 flex flex-col lg:text-start relative'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <div className='rounded-full absolute h-72 w-[30rem] bg-gradient-radial blur-xl -top-10 left-20 from-blue-500 opacity-10 to-neutral-900 -z-10'></div>
+            <div className='rounded-full absolute h-48 lg:h-72 w-64 lg:w-[30rem] bg-gradient-radial blur-xl -top-10 left-20 from-blue-500 opacity-10 to-neutral-900 -z-10'></div>
             <div className='rounded-full absolute h-48 w-72 bg-gradient-radial blur-xl -left-20 -top-20 from-green-500 opacity-10 rotate-12 to-neutral-900 -z-10'></div>
-            <div className='text-2xl xl:text-4xl font-bold leading-[1.2] [text-wrap:balance]'>
+            <div className='text-xl sm:text-2xl lg:text-4xl font-bold leading-[1.2] [text-wrap:balance]'>
               Remote Front-End Developer
             </div>
-            <div className='[text-wrap:balance] leading-[1.5]'>
-              Hi, I'm Krzysztof Andrukiewicz. Passionate and eager to learn{" "}
-              <span className='font-bold text-green-600 dark:text-green-500'>
-                Front-end Developer
-              </span>{" "}
-              based in Giżycko, Poland.
+            <div className='[text-wrap:balance] leading-6 text-lg my-4'>
+              <p>
+                Hi! ✌️ I'm{" "}
+                <span className='underline underline-offset-2 text-green-600 dark:text-green-500 font-bold'>
+                  Krzysztof Andrukiewicz
+                </span>
+                ,<p>and I just can't get enough of coding. </p>
+                <p>
+                  <span className='font-bold text-green-600 dark:text-green-500'>
+                    Front-end Developer
+                  </span>{" "}
+                  based in Giżycko, Poland.
+                </p>
+              </p>
             </div>
           </motion.div>
           <motion.div
-            className='flex flex-col gap-8 items-center lg:items-start justify-center'
+            className='flex flex-col gap-4 sm:gap-8 items-center lg:items-start justify-center'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -91,7 +99,7 @@ export default function Introduction() {
             </div>
           </motion.div>
         </div>
-        <div className='relative flex flex-col items-center justify-center'>
+        <div className='relative flex flex-col items-center justify-center shadow-highlight rounded-full border-[0.2rem] border-white dark:border-gray-950'>
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -107,7 +115,7 @@ export default function Introduction() {
               quality='95'
               priority={true}
               alt='Profile picture'
-              className='rounded-full border-[0.2rem] object-cover shadow-highlight border-gray-950 dark:border-gray-50 h-48 w-48 lg:w-64 lg:h-64'
+              className='rounded-full object-cover shadow-highlight h-48 w-48 lg:w-64 lg:h-64'
             />
           </motion.div>
           <motion.span

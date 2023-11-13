@@ -9,7 +9,7 @@ export default function Contact() {
     <motion.section
       id='contact'
       ref={ref}
-      className='bg-gray-100 dark:bg-gray-900 flex flex-col w-full py-8 px-16 rounded-lg shadow-highlight mt-16 gap-4 items-center text-center mb-16 max-w-3xl'
+      className='bg-gray-100 dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-50 flex flex-col w-full py-8 px-16 rounded-lg shadow-highlight mt-16 gap-4 items-center text-center mb-16 max-w-3xl'
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{

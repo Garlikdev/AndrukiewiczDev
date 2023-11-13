@@ -33,7 +33,7 @@ export default function Project({
     <motion.section
       style={{ scale: scaleProgress, opacity: opacityProgress }}
       ref={ref}
-      className='flex flex-col-reverse sm:flex-col group even:sm:flex-row-reverse transition-colors hover:bg-gray-100 hover:dark:bg-gray-900 max-w-[42rem] border border-black/5 overflow-hidden sm:pr-8 relative sm:h-fit shadow-highlight rounded-lg'
+      className='flex flex-col-reverse sm:flex-col group even:sm:flex-row-reverse transition-colors bg-gray-100 dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-50 hover:bg-gray-100 hover:dark:bg-gray-900 max-w-[42rem] border border-black/5 overflow-hidden sm:pr-8 relative sm:h-fit shadow-highlight rounded-2xl'
     >
       <div className='py-4 px-5 sm:pl-10 sm:pr-2 sm:py-10 sm:max-w-[50%] flex flex-col h-full items-center text-center sm:items-start sm:text-start'>
         <h3 className='text-2xl font-medium'>{title}</h3>
