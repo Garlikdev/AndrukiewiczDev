@@ -18,7 +18,7 @@ export default function Introduction() {
     <section
       id='home'
       ref={ref}
-      className='h-[calc(100vh-72px)] pt-[72px] scroll-mt-28 items-center justify-center flex flex-col gap-4 sm:gap-8 lg:gap-16'
+      className='h-screen scroll-mt-28 items-center justify-center flex flex-col gap-4 sm:gap-8 lg:gap-16'
     >
       <div className='flex flex-col-reverse sm:flex-row items-center justify-center'>
         <div className='max-w-xl flex flex-col relative'>
@@ -27,13 +27,16 @@ export default function Introduction() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <div className='text-2xl lg:text-5xl font-bold leading-[1.2] [text-wrap:balance]'>
-              Front-End React Developer
+            <div className='text-2xl xl:text-4xl font-bold leading-[1.2] [text-wrap:balance]'>
+              Remote Front-End Developer
             </div>
-            <p className='[text-wrap:balance] leading-[1.5]'>
-              Hi, I'm Krzysztof Andrukiewicz. Passionate and eager to learn
-              Front-end Developer based in Giżycko, Poland.
-            </p>
+            <div className='[text-wrap:balance] leading-[1.5]'>
+              Hi, I'm Krzysztof Andrukiewicz. Passionate and eager to learn{" "}
+              <span className='font-bold text-green-500'>
+                Front-end Developer
+              </span>{" "}
+              based in Giżycko, Poland.
+            </div>
           </motion.div>
           <motion.div
             className='flex flex-col gap-8 items-center lg:items-start justify-center'
@@ -76,8 +79,8 @@ export default function Introduction() {
                 <HiArrowRight className='opacity-80 group-hover:translate-x-1' />
               </Link>
               <a
-                download
                 href='/CV_KrzysztofAndrukiewicz.pdf'
+                target='_blank'
                 className='px-4 py-2 text-xl font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 hover:bg-blue-600 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
               >
                 CV{" "}
@@ -102,7 +105,7 @@ export default function Introduction() {
               quality='95'
               priority={true}
               alt='Profile picture'
-              className='rounded-full border-[0.2rem] object-cover shadow-highlight border-gray-950 dark:border-gray-50 h-48 w-48 lg:h-72 lg:w-72'
+              className='rounded-full border-[0.2rem] object-cover shadow-highlight border-gray-950 dark:border-gray-50 h-48 w-48 lg:w-64 lg:h-64'
             />
           </motion.div>
           <motion.span

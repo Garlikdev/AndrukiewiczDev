@@ -62,9 +62,32 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "3klik",
+    title: "Kanban app",
+    time: "October 2023",
     description:
-      "I worked as a full-stack developer on this startup project for almost 2 years. E-commerce app with advanced admin system in which you can manipulate recipies and ingredients, prices and sets of meals.",
+      "Task manager based on Trello. I used Tailwind for styling and react-beautiful-dnd for drag and drop and animations. Client side with localstorage.",
+    tags: ["React", "Next.js", "Tailwind", "Beautiful-dnd"],
+    available: true,
+    siteUrl: "https://trollo-self.vercel.app/",
+    codeUrl: "https://github.com/Andrukiewicz/todolist",
+    imageUrl: kanbanImg,
+  },
+  {
+    title: "ELO Pokrowce",
+    time: "June 2023",
+    description:
+      "E-commerce website for manufacturer of covers for sails, racing boats and accessories.",
+    tags: ["React", "Tailwind", "Node.js", "Express", "Hotpay", "PostgreSQL"],
+    available: true,
+    siteUrl: "https://elopokrowce.pl/",
+    codeUrl: "",
+    imageUrl: eloImg,
+  },
+  {
+    title: "3klik",
+    time: "March 2023",
+    description:
+      "E-commerce app with advanced admin system in which you can manipulate recipies and ingredients, prices and sets of meals.",
     tags: [
       "React",
       "Redux",
@@ -78,26 +101,6 @@ export const projectsData = [
     siteUrl: "https://3klik.pl/",
     codeUrl: "",
     imageUrl: klikImg,
-  },
-  {
-    title: "ELO Pokrowce",
-    description:
-      "E-commerce website for manufacturer of covers for sails, racing boats and accessories. I decided to use PostgreSQL and HotPay for the first time.",
-    tags: ["React", "Tailwind", "Node.js", "Express", "Hotpay", "PostgreSQL"],
-    available: true,
-    siteUrl: "https://elopokrowce.pl/",
-    codeUrl: "",
-    imageUrl: eloImg,
-  },
-  {
-    title: "Kanban app",
-    description:
-      "Task manager based on Trello. I used Tailwind for styling and react-beautiful-dnd for drag and drop and animations. Client side with localstorage.",
-    tags: ["React", "Next.js", "Tailwind", "Drag & drop"],
-    available: true,
-    siteUrl: "https://trollo-self.vercel.app/",
-    codeUrl: "https://github.com/Andrukiewicz/todolist",
-    imageUrl: kanbanImg,
   },
 ] as const
 

@@ -19,19 +19,32 @@ export default function About() {
       <SectionHeading>Hey there!</SectionHeading>
       <article className='gap-4 flex flex-col'>
         <p>
-          I've always been fascinated with building websites. I started out as a
-          photographer, videographer, and graphic designer, and even had my own
-          little company for a year. Then, I jumped into the world of web
-          development, learning React and working as a freelancer. I've had the
-          pleasure of creating some really cool websites! I'm all about
-          patience, problem-solving, and making sure things work just right.
+          I've always been{" "}
+          <span className='text-green-500 font-bold'>
+            {" "}
+            fascinated with building websites
+          </span>
+          . I started out as a photographer, videographer, and graphic designer,
+          and even had my own little company for a year. Then, I jumped into the
+          world of web development, learning React and working as a freelancer.
+          I've had the pleasure of creating some really cool websites! I'm all
+          about{" "}
+          <span className='text-green-500 font-bold'>
+            patience, problem-solving, and making sure things work just right.
+          </span>
         </p>
         <p>
-          My go-to tools are React, Next.js, Tailwind, and Prisma. I've also got
-          some backend skills with Node.js, Express, MongoDB, and PostgreSQL.
-          I'm currently diving into TypeScript, always hungry to learn new
+          My go-to tools are{" "}
+          <span className='text-green-500 font-bold'>
+            React, Next.js, Tailwind, and Prisma
+          </span>
+          . I've also got some backend skills with{" "}
+          <span className='text-green-500 font-bold'>
+            Node.js, Express, MongoDB, and PostgreSQL
+          </span>
+          . I'm currently diving into TypeScript, always hungry to learn new
           things. Right now, I'm on the lookout for a full-time gig as a
-          Front-End Developer or Fullstack Developer.
+          Front-End Developer.
         </p>
         <p>
           Besides coding, you'll find me gaming 🎮, strumming on my guitar,
