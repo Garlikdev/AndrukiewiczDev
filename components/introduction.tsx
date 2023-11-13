@@ -32,20 +32,20 @@ export default function Introduction() {
             <div className='text-xl sm:text-2xl lg:text-4xl font-bold leading-[1.2] [text-wrap:balance]'>
               Remote Front-End Developer
             </div>
-            <div className='[text-wrap:balance] leading-6 text-lg my-4'>
-              <p>
+            <div className='[text-wrap:balance] leading-7 text-lg my-4'>
+              <div>
                 Hi! ✌️ I'm{" "}
                 <span className='underline underline-offset-2 text-green-600 dark:text-green-500 font-bold'>
                   Krzysztof Andrukiewicz
                 </span>
-                ,<p>and I just can't get enough of coding. </p>
+                ,<p>and I just can't get enough of coding.💻 </p>
                 <p>
                   <span className='font-bold text-green-600 dark:text-green-500'>
                     Front-end Developer
                   </span>{" "}
-                  based in Giżycko, Poland.
+                  based in Giżycko, Poland.📌
                 </p>
-              </p>
+              </div>
             </div>
           </motion.div>
           <motion.div
@@ -99,7 +99,7 @@ export default function Introduction() {
             </div>
           </motion.div>
         </div>
-        <div className='relative flex flex-col items-center justify-center shadow-highlight rounded-full border-[0.2rem] border-white dark:border-gray-950'>
+        <div className='relative flex flex-col items-center justify-center rounded-full'>
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -115,7 +115,7 @@ export default function Introduction() {
               quality='95'
               priority={true}
               alt='Profile picture'
-              className='rounded-full object-cover shadow-highlight h-48 w-48 lg:w-64 lg:h-64'
+              className='rounded-full object-cover shadow-highlight h-48 w-48 lg:w-64 lg:h-64 border-[0.2rem] border-white dark:border-gray-950'
             />
           </motion.div>
           <motion.span
