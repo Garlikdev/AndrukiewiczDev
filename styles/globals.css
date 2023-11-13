@@ -64,8 +64,7 @@
     rgba(76, 0, 255, 1),
     rgba(76, 0, 255, 0)
   );
-  opacity: 0.2;
-  z-index: 999;
+  opacity: 0.3;
 }
 
 .main {

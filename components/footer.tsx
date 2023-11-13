@@ -2,7 +2,7 @@ import { BsGithub, BsLinkedin } from "react-icons/bs"
 
 export default function Footer() {
   return (
-    <footer className='w-full px-6 bg-gray-100 dark:bg-gray-950 shadow-highlight py-16 items-center justify-center flex'>
+    <footer className='w-full px-6 shadow-highlight py-16 items-center justify-center flex'>
       <div className='max-w-3xl w-full flex-col sm:flex-row gap-6 justify-between flex items-center'>
         <div>
           All rights reserved © 2023{" "}

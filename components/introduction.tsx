@@ -23,16 +23,18 @@ export default function Introduction() {
       <div className='flex flex-col-reverse sm:flex-row items-center justify-center'>
         <div className='max-w-xl flex flex-col relative'>
           <motion.div
-            className='mb-4 mt-4 text-center gap-4 flex flex-col lg:text-start'
+            className='mb-4 mt-4 text-center gap-4 flex flex-col lg:text-start relative'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
+            <div className='rounded-full absolute h-72 w-[30rem] bg-gradient-radial blur-xl -top-10 left-20 from-blue-500 opacity-10 to-neutral-900 -z-10'></div>
+            <div className='rounded-full absolute h-48 w-72 bg-gradient-radial blur-xl -left-20 -top-20 from-green-500 opacity-10 rotate-12 to-neutral-900 -z-10'></div>
             <div className='text-2xl xl:text-4xl font-bold leading-[1.2] [text-wrap:balance]'>
               Remote Front-End Developer
             </div>
             <div className='[text-wrap:balance] leading-[1.5]'>
               Hi, I'm Krzysztof Andrukiewicz. Passionate and eager to learn{" "}
-              <span className='font-bold text-green-500'>
+              <span className='font-bold text-green-600 dark:text-green-500'>
                 Front-end Developer
               </span>{" "}
               based in Giżycko, Poland.
@@ -69,7 +71,7 @@ export default function Introduction() {
             <div className='flex gap-4'>
               <Link
                 href='#contact'
-                className='px-4 py-2 text-xl group font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+                className='px-4 py-2 text-xl group font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
                 onClick={() => {
                   setActiveSection("Contact")
                   setTimeOfLastClick(Date.now())
@@ -81,7 +83,7 @@ export default function Introduction() {
               <a
                 href='/CV_KrzysztofAndrukiewicz.pdf'
                 target='_blank'
-                className='px-4 py-2 text-xl font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 hover:bg-blue-600 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+                className='px-4 py-2 text-xl font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 hover:bg-blue-600 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
               >
                 CV{" "}
                 <HiDownload className='opacity-80 group-hover:translate-x-1' />
@@ -138,7 +140,7 @@ export default function Introduction() {
         <ul className='flex flex-row gap-1 sm:gap-4 items-center justify-center w-fit'>
           <li
             title='Html, Css, Javascript'
-            className='px-4 py-2 text-xl h-auto group font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+            className='px-4 py-2 text-xl h-auto group font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
           >
             <Image
               alt='Stack icons'
@@ -149,7 +151,7 @@ export default function Introduction() {
           </li>
           <li
             title='React, Next.js, TailwindCSS'
-            className='px-4 py-2 text-xl h-auto group font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+            className='px-4 py-2 text-xl h-auto group font-medium rounded-full bg-gray-100 shadow-highlight text-gray-50 dark:bg-gray-900 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
           >
             <Image
               width={128}
@@ -160,7 +162,7 @@ export default function Introduction() {
           </li>
           <li
             title='MongoDB, PostgreSQL, Prisma'
-            className='px-4 py-2 text-xl h-auto group font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+            className='px-4 py-2 text-xl h-auto group font-medium rounded-full bg-gray-100 shadow-highlight text-gray-50 dark:bg-gray-900 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
           >
             <Image
               width={128}

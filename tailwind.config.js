@@ -21,6 +21,7 @@ module.exports = {
       },
       backgroundImage: {
         "grid-pattern": "url('/grid.jpg')",
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
     },
   },
