@@ -4,6 +4,7 @@ import Nav from "@components/navbar/Nav"
 import { Inter, Open_Sans } from "next/font/google"
 import ActiveSectionContextProvider from "@/context/active-section-context"
 import Footer from "@components/footer"
+import { GoogleTagManager } from "@next/third-parties/google"
 
 export const metadata = {
   title: "Andrukiewicz Dev | Front-End Developer",
@@ -32,6 +33,7 @@ export default function Layout({ children }) {
         </ActiveSectionContextProvider>
         <Footer />
       </body>
+      <GoogleTagManager gtmId='GTM-5Q74XNRK' />
     </html>
   )
 }
