@@ -5,6 +5,7 @@ import { Inter, Open_Sans } from "next/font/google"
 import ActiveSectionContextProvider from "@/context/active-section-context"
 import Footer from "@components/footer"
 import { GoogleTagManager } from "@next/third-parties/google"
+import Script from "next/script"
 
 export const metadata = {
   title: "Andrukiewicz Dev | Front-End Developer",
@@ -34,6 +35,16 @@ export default function Layout({ children }) {
         <Footer />
       </body>
       <GoogleTagManager gtmId='GTM-5Q74XNRK' />
+      <Script src='https://www.googletagmanager.com/gtag/js?id=G-171W6BLZ9Y' />
+      <Script id='google-analytics'>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-171W6BLZ9Y');
+        `}
+      </Script>
     </html>
   )
 }
