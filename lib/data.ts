@@ -62,10 +62,9 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "Kanban app",
+    title: "Must have Todo App",
     time: "October 2023",
-    description:
-      "Task manager based on Trello. I used Tailwind for styling and react-beautiful-dnd for drag and drop and animations. Client side with localstorage.",
+    description: "Come on. Everyone has to have To Do app in portfolio.",
     tags: ["React", "Next.js", "Tailwind", "Beautiful-dnd"],
     available: true,
     siteUrl: "https://trollo-self.vercel.app/",
@@ -73,10 +72,10 @@ export const projectsData = [
     imageUrl: kanbanImg,
   },
   {
-    title: "ELO Pokrowce",
+    title: "E-commerce",
     time: "June 2023",
     description:
-      "E-commerce website for manufacturer of covers for sails, racing boats and accessories.",
+      "An automated shipping system generates packages for every order and manages products, saving the client about 70% of the time compared to their previous system where packages had to be created manually.",
     tags: ["React", "Tailwind", "Node.js", "Express", "Hotpay", "PostgreSQL"],
     available: true,
     siteUrl: "https://elopokrowce.pl/",
@@ -84,10 +83,10 @@ export const projectsData = [
     imageUrl: eloImg,
   },
   {
-    title: "3klik",
+    title: "E-commerce",
     time: "March 2023",
     description:
-      "E-commerce app with advanced admin system in which you can manipulate recipies and ingredients, prices and sets of meals.",
+      "In the admin panel, precise ingredient lists for meal sets enable efficient wholesaler orders, removing the need for manual calculations and saving up to 90% of admin time on order and ingredient verification.",
     tags: [
       "React",
       "Redux",

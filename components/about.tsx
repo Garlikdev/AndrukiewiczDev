@@ -36,40 +36,43 @@ export default function About() {
         <SectionHeading>Hey there!</SectionHeading>
         <article className='gap-4 flex flex-col [text-wrap:balance] text-sm sm:text-base lg:text-lg'>
           <p>
-            I've always been{" "}
+            I'm a{" "}
+            <span className='text-green-500 font-bold'>web developer</span> with
+            a <span className='text-green-500 font-bold'>creative past</span> in
+            photography and design. I've dived into{" "}
+            <span className='text-green-500 font-bold'>React</span> and
+            freelancing, loving the{" "}
             <span className='text-green-500 font-bold'>
-              {" "}
-              fascinated with building websites
-            </span>
-            . I started out as a photographer, videographer, graphic designer,
-            and even had my own little company for a year. Then, I jumped into
-            the world of web development (again 😂), learning React and working
-            as a freelancer. I'm all about{" "}
-            <span className='text-green-500 font-bold'>
-              patience, problem-solving, and making sure things work just right.
-            </span>
-          </p>
-          <p>
-            My go-to tools are{" "}
-            <span className='text-green-500 font-bold'>
-              React, Next.js, Tailwind, and Prisma
-            </span>
-            . I've also got some backend skills with{" "}
-            <span className='text-green-500 font-bold'>
-              Node.js, Express, MongoDB, and PostgreSQL
-            </span>
-            . I'm currently diving into{" "}
-            <span className='text-green-500 font-bold'>TypeScript</span>, always
-            hungry to learn new things. I'm on the lookout for a full-time gig
-            as a{" "}
-            <span className='text-green-500 font-bold'>
-              Remote Frontend Developer
+              puzzle-solving aspect
             </span>
             .
           </p>
           <p>
-            Besides coding, you'll find me gaming 🎮, strumming on my guitar,
-            binge-watching series 📺, and helping friends fix their computers.
+            {" "}
+            Skilled in{" "}
+            <span className='text-green-500 font-bold'>React, Next, Node</span>,
+            and open for anything. I'm on my way to{" "}
+            <span className='text-green-500 font-bold'>TypeScript</span>. When
+            I'm not coding, catch me{" "}
+            <span className='text-green-500 font-bold'>gaming 🎮</span>,{" "}
+            <span className='text-green-500 font-bold'>
+              strumming my guitar 🎸 ,{" "}
+            </span>
+            <span className='text-green-500 font-bold'>
+              binge-watching series 📺
+            </span>
+            , or{" "}
+            <span className='text-green-500 font-bold'>
+              fixing friends' computers
+            </span>
+            .{" "}
+          </p>
+          <p>
+            Currently looking for a{" "}
+            <span className='text-green-500 font-bold underline underline-offset-4'>
+              remote frontend / fullstack role
+            </span>
+            !
           </p>
         </article>
       </motion.div>

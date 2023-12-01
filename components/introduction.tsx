@@ -38,7 +38,11 @@ export default function Introduction() {
                 <span className='underline underline-offset-2 text-green-600 dark:text-green-500 font-bold'>
                   Krzysztof Andrukiewicz
                 </span>
-                ,<p>and I just can't get enough of coding.💻 </p>
+                ,
+                <p>
+                  I love automation, time saving and I just can't get enough of
+                  coding.💻{" "}
+                </p>
                 <p>
                   <span className='font-bold text-green-600 dark:text-green-500'>
                     Front-end Developer
