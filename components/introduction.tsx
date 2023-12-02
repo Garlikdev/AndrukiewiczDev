@@ -18,7 +18,7 @@ export default function Introduction() {
     <section
       id='home'
       ref={ref}
-      className='h-screen scroll-mt-28 items-center justify-center flex flex-col gap-4 sm:gap-8 lg:gap-16'
+      className='h-screen scroll-mt-28 items-center justify-center flex flex-col gap-4 sm:gap-8 lg:gap-8'
     >
       <div className='flex flex-col-reverse sm:flex-row items-center justify-center'>
         <div className='max-w-xl flex flex-col relative'>
