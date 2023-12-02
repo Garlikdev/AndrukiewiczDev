@@ -49,21 +49,22 @@ export default function About() {
           </p>
           <p>
             {" "}
-            Skilled in{" "}
+            Proficient in{" "}
             <span className='text-green-500 font-bold'>React, Next, Node</span>,
-            and open for anything. I'm on my way to{" "}
-            <span className='text-green-500 font-bold'>TypeScript</span>. When
-            I'm not coding, catch me{" "}
+            with a keen interest in mastering{" "}
+            <span className='text-green-500 font-bold'>TypeScript</span>.
+            Outside of coding, you'll find me{" "}
             <span className='text-green-500 font-bold'>gaming 🎮</span>,{" "}
             <span className='text-green-500 font-bold'>
-              strumming my guitar 🎸 ,{" "}
+              strumming my guitar 🎸
             </span>
+            ,{" "}
             <span className='text-green-500 font-bold'>
               binge-watching series 📺
             </span>
             , or{" "}
             <span className='text-green-500 font-bold'>
-              fixing friends' computers
+              troubleshooting friends' computers
             </span>
             .{" "}
           </p>
