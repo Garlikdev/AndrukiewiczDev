@@ -86,7 +86,7 @@ export const projectsData = [
     title: "E-commerce",
     time: "March 2023",
     description:
-      "In the admin panel, precise ingredient lists for meal sets enable efficient wholesaler orders, removing the need for manual calculations and saving up to 90% of admin time on order and ingredient verification.",
+      "Precise price, weight and amount calculation panel per meal sets, enabling efficient wholesaler orders at the end of the week, reducing the need for user intervention down to one click.",
     tags: [
       "React",
       "Redux",
