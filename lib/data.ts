@@ -53,7 +53,7 @@ export const projectsData = [
   },
   {
     title: "Fullstack e-commerce",
-    time: "June 2023",
+    time: "March 2023 - June 2023",
     description:
       "An automated shipping system generates packages for every order and manages products, saving the client about 70% of the time compared to their previous system where packages had to be created manually.",
     tags: ["React", "Tailwind", "Node.js", "Express", "Hotpay", "PostgreSQL"],
@@ -64,7 +64,7 @@ export const projectsData = [
   },
   {
     title: "Fullstack e-commerce",
-    time: "March 2023",
+    time: "September 2022 - March 2023",
     description:
       "Precise price, weight and amount calculation panel per meal sets, enabling efficient wholesaler orders at the end of the week, reducing the need for user intervention down to one click.",
     tags: [
