@@ -64,7 +64,7 @@ export const projectsData = [
   },
   {
     title: "Fullstack e-commerce",
-    time: "September 2022 - March 2023",
+    time: "September 2021 - March 2023",
     description:
       "Precise price, weight and amount calculation panel per meal sets, enabling efficient wholesaler orders at the end of the week, reducing the need for user intervention down to one click.",
     tags: [
