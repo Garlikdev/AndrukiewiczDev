@@ -2,6 +2,7 @@ import klikImg from "@public/klik.png"
 import eloImg from "@public/elopokrowce_small.png"
 import kanbanImg from "@public/trollo_small.png"
 import coffeepandaImg from "@public/coffeepanda.webp"
+import oldroadImg from "@public/oldroad.webp"
 
 export const links = [
   {
@@ -31,6 +32,16 @@ export const links = [
 ] as const
 
 export const projectsData = [
+  {
+    title: "Barber Shop",
+    time: "January 2024",
+    description: "Clean, not yet animated site for local Barber Shop.",
+    tags: ["Next.js", "React", "Tailwind", "Framer motion"],
+    available: true,
+    siteUrl: "https://oldroadbarbershop.vercel.app/",
+    codeUrl: "https://github.com/Andrukiewicz/Barbershop",
+    imageUrl: oldroadImg,
+  },
   {
     title: "Café web design",
     time: "December 2023",
