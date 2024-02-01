@@ -74,7 +74,7 @@ export const projectsData = [
     imageUrl: eloImg,
   },
   {
-    title: "Fullstack e-commerce",
+    title: "Fullstack Food selling app",
     time: "September 2021 - March 2023",
     description:
       "Precise price, weight and amount calculation panel per meal sets, enabling efficient wholesaler orders at the end of the week, reducing the need for user intervention down to one click.",
@@ -87,9 +87,9 @@ export const projectsData = [
       "MongoDB",
       "Stripe",
     ],
-    available: false,
-    siteUrl: "https://3klik.pl/",
-    codeUrl: "",
+    available: true,
+    siteUrl: "https://github.com/Andrukiewicz/FreshCuisine",
+    codeUrl: "https://github.com/Andrukiewicz/FreshCuisine",
     imageUrl: klikImg,
   },
 ] as const
