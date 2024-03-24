@@ -1,21 +1,22 @@
-import klikImg from "@public/klik.png"
-import eloImg from "@public/elopokrowce_small.png"
-import kanbanImg from "@public/trollo_small.png"
+import klikImg from "@public/klik.webp"
+import eloImg from "@public/elopokrowce_small.webp"
+import kanbanImg from "@public/trollo_small.webp"
 import coffeepandaImg from "@public/coffeepanda.webp"
 import oldroadImg from "@public/oldroad.webp"
+import kackyImg from "@public/kacky.webp"
 
 export const links = [
   {
     name: "Home",
-    hash: "#home",
+    hash: "/#home",
   },
   {
     name: "About",
-    hash: "#about",
+    hash: "/#about",
   },
   {
     name: "Projects",
-    hash: "#projects",
+    hash: "/#projects",
   },
   // {
   //   name: "Skills",
@@ -27,11 +28,29 @@ export const links = [
   // },
   {
     name: "Contact",
-    hash: "#contact",
+    hash: "/#contact",
   },
 ] as const
 
 export const projectsData = [
+  {
+    title: "Trackmania event community project",
+    time: "March 2024",
+    description:
+      "Project coming up in May 2024. Collaboration with Trackmania community.",
+    tags: [
+      "Next.js",
+      "React",
+      "SSR",
+      "Tailwind",
+      "Framer motion",
+      "Python REST API",
+    ],
+    available: true,
+    siteUrl: "https://kacky.gg",
+    codeUrl: "https://github.com/Garlikdev/kacky-eventpage-frontend",
+    imageUrl: kackyImg,
+  },
   {
     title: "Barber Shop",
     time: "January 2024",
@@ -39,7 +58,7 @@ export const projectsData = [
     tags: ["Next.js", "React", "Tailwind", "Framer motion"],
     available: true,
     siteUrl: "https://oldroadbarbershop.vercel.app/",
-    codeUrl: "https://github.com/Andrukiewicz/Barbershop",
+    codeUrl: "https://github.com/Garlikdev/Barbershop",
     imageUrl: oldroadImg,
   },
   {
@@ -49,7 +68,7 @@ export const projectsData = [
     tags: ["Next.js", "React", "Tailwind", "Framer motion"],
     available: true,
     siteUrl: "https://coffeepanda.vercel.app/",
-    codeUrl: "https://github.com/Andrukiewicz/CoffeePanda",
+    codeUrl: "https://github.com/Garlikdev/CoffeePanda",
     imageUrl: coffeepandaImg,
   },
   {
@@ -59,7 +78,7 @@ export const projectsData = [
     tags: ["Next.js", "React", "Tailwind", "Beautiful-dnd"],
     available: true,
     siteUrl: "https://trollo-self.vercel.app/",
-    codeUrl: "https://github.com/Andrukiewicz/todolist",
+    codeUrl: "https://github.com/Garlikdev/todolist",
     imageUrl: kanbanImg,
   },
   {

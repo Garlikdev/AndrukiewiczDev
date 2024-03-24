@@ -30,7 +30,7 @@ export default function Introduction() {
             <div className='rounded-full absolute h-48 lg:h-72 w-64 lg:w-[30rem] bg-gradient-radial blur-xl -top-10 left-20 from-blue-500 opacity-10 to-neutral-900 -z-10'></div>
             <div className='rounded-full absolute h-48 w-72 bg-gradient-radial blur-xl -left-20 -top-20 from-green-500 opacity-10 rotate-12 to-neutral-900 -z-10'></div>
             <div className='text-xl sm:text-2xl lg:text-4xl font-bold leading-[1.2] [text-wrap:balance]'>
-              Remote Front-End Developer
+              Remote Fullstack Developer
             </div>
             <div className='[text-wrap:balance] leading-7 text-lg my-4'>
               <div>
@@ -45,7 +45,7 @@ export default function Introduction() {
                 </p>
                 <p>
                   <span className='font-bold text-green-600 dark:text-green-500'>
-                    Front-end Developer
+                    Fullstack Developer
                   </span>{" "}
                   based in Giżycko, Poland.📌
                 </p>
@@ -71,7 +71,7 @@ export default function Introduction() {
                 <BsLinkedin className='w-8 h-8' />
               </a>
               <a
-                href='https://github.com/Andrukiewicz'
+                href='https://github.com/Garlikdev'
                 target='_blank'
                 rel='noreferrer'
                 aria-label='My github profile'

@@ -7,6 +7,7 @@ import { useRef } from "react"
 import Link from "next/link"
 import { BsGithub, BsLink } from "react-icons/bs"
 import { useActiveSectionContext } from "@context/active-section-context"
+import { useSectionInView } from "@lib/hooks"
 
 type ProjectProps = (typeof projectsData)[number]
 
@@ -20,9 +21,10 @@ export default function Project({
   siteUrl,
   imageUrl,
 }: ProjectProps) {
-  const ref = useRef<HTMLElement>(null)
+  const { ref } = useSectionInView("Projects", 0.5)
+  const refScroll = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: refScroll,
     offset: ["0 1.33", "1.1 1"],
   })
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
@@ -35,7 +37,10 @@ export default function Project({
       ref={ref}
       className='flex flex-col-reverse sm:flex-col group even:sm:flex-row-reverse transition-colors bg-gray-100 dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-50 hover:bg-gray-100 hover:dark:bg-gray-900 max-w-[42rem] border border-black/5 overflow-hidden sm:pr-8 relative sm:h-fit shadow-highlight rounded-2xl'
     >
-      <div className='py-4 px-5 sm:pl-10 sm:pr-2 sm:py-10 sm:max-w-[50%] flex flex-col h-full items-center text-center sm:items-start sm:text-start'>
+      <div
+        ref={ref}
+        className='py-4 px-5 sm:pl-10 sm:pr-2 sm:py-10 sm:max-w-[50%] flex flex-col h-full items-center text-center sm:items-start sm:text-start'
+      >
         <h3 className='text-2xl font-medium'>{title}</h3>
         <span className='text-xs font-bold text-green-500'>{time}</span>
         <p className='mt-2 leading-relaxed text-gray-700 dark:text-gray-300 [text-wrap:balance]'>
