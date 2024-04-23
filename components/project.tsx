@@ -25,16 +25,16 @@ export default function Project({
   const refScroll = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: refScroll,
-    offset: ["0 1.33", "1.1 1"],
+    offset: ["0 1.33", "0.3 1"],
   })
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1])
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1])
+  const opacityProgress = useTransform(scrollYProgress, [0.5, 1], [0, 1])
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext()
   return (
     <motion.section
       style={{ scale: scaleProgress, opacity: opacityProgress }}
-      ref={ref}
+      ref={refScroll}
       className='flex flex-col-reverse sm:flex-col group even:sm:flex-row-reverse transition-colors bg-gray-100 dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-50 hover:bg-gray-100 hover:dark:bg-gray-900 max-w-[42rem] border border-black/5 overflow-hidden sm:pr-8 relative sm:h-fit shadow-highlight rounded-2xl'
     >
       <div
