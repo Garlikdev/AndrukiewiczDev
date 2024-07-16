@@ -16,6 +16,7 @@ export default function Project({
   time,
   description,
   tags,
+  version,
   codeUrl,
   available,
   siteUrl,
@@ -76,7 +77,7 @@ export default function Project({
               rel='noreferrer'
               className='px-2 py-1 font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
             >
-              Live Demo <BsLink />
+              {version} <BsLink />
             </Link>
           ) : (
             <Link

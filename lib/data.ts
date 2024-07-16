@@ -4,6 +4,7 @@ import kanbanImg from "@public/trollo_small.webp"
 import coffeepandaImg from "@public/coffeepanda.webp"
 import oldroadImg from "@public/oldroad.webp"
 import kackyImg from "@public/kacky.webp"
+import boatrentalImg from "@public/boatrental.webp"
 
 export const links = [
   {
@@ -34,18 +35,30 @@ export const links = [
 
 export const projectsData = [
   {
-    title: "Trackmania event community project",
-    time: "March 2024",
-    description:
-      "Project coming up in May 2024. Collaboration with Trackmania community.",
+    title: "Boat rental manager",
+    time: "July 2024",
+    description: "Native desktop app for managing rental company.",
+    tags: ["Electron", "React", "Vite", "Tailwind", "SQLite", "Shadcn/ui"],
+    version: "demo",
+    available: false,
+    siteUrl: "",
+    codeUrl: "https://github.com/Garlikdev/DreamboatApp",
+    imageUrl: boatrentalImg,
+  },
+  {
+    title: "Kacky.gg - Trackmania events",
+    time: "March 2024 - now",
+    description: "Trackmania community event site.",
     tags: [
-      "Next.js",
+      "TypeScript",
+      "Rewriting to Next.js",
       "React",
       "SSR",
       "Tailwind",
       "Framer motion",
       "Python REST API",
     ],
+    version: "Live",
     available: true,
     siteUrl: "https://kacky.gg",
     codeUrl: "https://github.com/Garlikdev/kacky-eventpage-frontend",
@@ -56,6 +69,7 @@ export const projectsData = [
     time: "January 2024",
     description: "Clean, not yet animated site for local Barber Shop.",
     tags: ["Next.js", "React", "Tailwind", "Framer motion"],
+    version: "Demo",
     available: true,
     siteUrl: "https://oldroadbarbershop.vercel.app/",
     codeUrl: "https://github.com/Garlikdev/Barbershop",
@@ -66,6 +80,7 @@ export const projectsData = [
     time: "December 2023",
     description: "Beautiful, animated website idea for your Café.",
     tags: ["Next.js", "React", "Tailwind", "Framer motion"],
+    version: "Demo",
     available: true,
     siteUrl: "https://coffeepanda.vercel.app/",
     codeUrl: "https://github.com/Garlikdev/CoffeePanda",
@@ -76,6 +91,7 @@ export const projectsData = [
     time: "October 2023",
     description: "Come on. Everyone has to have To Do app in portfolio.",
     tags: ["Next.js", "React", "Tailwind", "Beautiful-dnd"],
+    version: "Demo",
     available: true,
     siteUrl: "https://trollo-self.vercel.app/",
     codeUrl: "https://github.com/Garlikdev/todolist",
@@ -87,6 +103,7 @@ export const projectsData = [
     description:
       "An automated shipping system generates packages for every order and manages products, saving the client about 70% of the time compared to their previous system where packages had to be created manually.",
     tags: ["React", "Tailwind", "Node.js", "Express", "Hotpay", "PostgreSQL"],
+    version: "Live",
     available: true,
     siteUrl: "https://elopokrowce.pl/",
     codeUrl: "",
@@ -106,6 +123,7 @@ export const projectsData = [
       "MongoDB",
       "Stripe",
     ],
+    version: "Demo",
     available: false,
     siteUrl: "",
     codeUrl: "https://github.com/Andrukiewicz/FreshCuisine",
