@@ -25,7 +25,7 @@ const Nav = () => {
         <div className='rounded-full absolute h-48 w-[40rem] bg-gradient-radial blur-xl left-0 top-0 from-indigo-500 opacity-25 dark:opacity-25 rotate-12 to-neutral-900 -z-10'></div>
       </motion.div>
 
-      <nav className='flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0 '>
+      <nav className='flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0'>
         <ul className='flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5'>
           {links.map((link) => (
             <motion.li
