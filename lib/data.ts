@@ -4,7 +4,7 @@ import kanbanImg from "@public/trollo_small.webp"
 import coffeepandaImg from "@public/coffeepanda.webp"
 import oldroadImg from "@public/oldroad.webp"
 import kackyImg from "@public/kacky.webp"
-import boatrentalImg from "@public/boatrental.webp"
+// import boatrentalImg from "@public/boatrental.webp"
 
 export const links = [
   {
@@ -34,29 +34,29 @@ export const links = [
 ] as const
 
 export const projectsData = [
+  // {
+  //   title: "Boat rental manager",
+  //   time: "July 2024",
+  //   description: "Native desktop app for managing rental company.",
+  //   tags: ["Electron", "React", "Vite", "Tailwind", "SQLite", "Shadcn/ui"],
+  //   version: "demo",
+  //   available: false,
+  //   siteUrl: "",
+  //   codeUrl: "https://github.com/Garlikdev/DreamboatApp",
+  //   imageUrl: boatrentalImg,
+  // },
   {
-    title: "Boat rental manager",
-    time: "July 2024",
-    description: "Native desktop app for managing rental company.",
-    tags: ["Electron", "React", "Vite", "Tailwind", "SQLite", "Shadcn/ui"],
-    version: "demo",
-    available: false,
-    siteUrl: "",
-    codeUrl: "https://github.com/Garlikdev/DreamboatApp",
-    imageUrl: boatrentalImg,
-  },
-  {
-    title: "Kacky.gg - Trackmania events",
+    title: "Kacky.gg",
     time: "March 2024 - now",
-    description: "Trackmania community event site.",
+    description: "Trackmania event site. Built by players for players. Group of amazing people spread worldwide creating amazing content for streamers and casual gamers.",
     tags: [
       "TypeScript",
-      "Rewriting to Next.js",
       "React",
-      "SSR",
-      "Tailwind",
+      "Moving to Next.js",
       "Framer motion",
       "Python REST API",
+      "Custom VPS",
+      "Live game server data exchange"
     ],
     version: "Live",
     available: true,

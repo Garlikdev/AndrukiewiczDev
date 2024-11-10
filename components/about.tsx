@@ -8,7 +8,7 @@ function useParallax(value: MotionValue<number>, distance: number) {
 }
 
 export default function About() {
-  const { ref } = useSectionInView("About")
+  const { ref } = useSectionInView("About", 0.75)
 
   const contentRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({

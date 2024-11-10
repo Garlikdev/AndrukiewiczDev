@@ -19,7 +19,7 @@ export default function Footer() {
             <BsLinkedin className='w-8 h-8' />
           </a>
           <a
-            href='https://github.com/Andrukiewicz'
+            href='https://github.com/Garlikdev'
             target='_blank'
             rel='noreferrer'
             aria-label='My github profile'
