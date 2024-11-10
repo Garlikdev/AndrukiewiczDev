@@ -7,7 +7,6 @@ import { useRef } from "react"
 import Link from "next/link"
 import { BsGithub, BsLink } from "react-icons/bs"
 import { useActiveSectionContext } from "@context/active-section-context"
-import { useSectionInView } from "@lib/hooks"
 
 type ProjectProps = (typeof projectsData)[number]
 
