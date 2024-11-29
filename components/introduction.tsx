@@ -27,7 +27,7 @@ export default function Introduction() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <div className='rounded-full absolute h-48 lg:h-72 w-64 lg:w-[30rem] bg-gradient-radial blur-xl -top-10 left-20 from-blue-500 opacity-10 to-neutral-900 -z-10'></div>
+            <div className='rounded-full absolute h-48 lg:h-72 w-64 lg:w-[30rem] bg-gradient-radial blur-xl -top-10 left-20 from-orange-500 opacity-10 to-neutral-900 -z-10'></div>
             <div className='rounded-full absolute h-48 w-72 bg-gradient-radial blur-xl -left-20 -top-20 from-green-500 opacity-10 rotate-12 to-neutral-900 -z-10'></div>
             <div className='text-xl sm:text-2xl lg:text-4xl font-bold leading-[1.2] [text-wrap:balance]'>
               Remote Fullstack Developer
@@ -47,7 +47,7 @@ export default function Introduction() {
                   <span className='font-bold text-green-600 dark:text-green-500'>
                     Fullstack Developer
                   </span>{" "}
-                  based in Giżycko, Poland.📌
+                  currently moving to Białystok, Poland.📌
                 </p>
               </div>
             </div>
@@ -93,11 +93,19 @@ export default function Introduction() {
                 <HiArrowRight className='opacity-80 group-hover:translate-x-1' />
               </Link>
               <a
-                href='/CV_KrzysztofAndrukiewicz.pdf'
+                href='/CV_KrzysztofAndrukiewicz_ENG.pdf'
                 target='_blank'
                 className='px-4 py-2 text-xl font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 hover:bg-blue-600 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
               >
-                CV{" "}
+                CV English{" "}
+                <HiDownload className='opacity-80 group-hover:translate-x-1' />
+              </a>
+              <a
+                href='/CV_KrzysztofAndrukiewicz_PL.pdf'
+                target='_blank'
+                className='px-4 py-2 text-xl font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 hover:bg-blue-600 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+              >
+                CV Polski{" "}
                 <HiDownload className='opacity-80 group-hover:translate-x-1' />
               </a>
             </div>
