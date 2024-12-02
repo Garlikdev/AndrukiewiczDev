@@ -4,12 +4,15 @@ import kanbanImg from "@public/trollo_small.webp"
 import coffeepandaImg from "@public/coffeepanda.webp"
 import oldroadImg from "@public/oldroad.webp"
 import kackyImg from "@public/kacky.webp"
-// import boatrentalImg from "@public/boatrental.webp"
 
 export const links = [
   {
     name: "Home",
     hash: "/#home",
+  },
+  {
+    name: "Stack",
+    hash: "/#stack"
   },
   {
     name: "About",
@@ -34,17 +37,6 @@ export const links = [
 ] as const
 
 export const projectsData = [
-  // {
-  //   title: "Boat rental manager",
-  //   time: "July 2024",
-  //   description: "Native desktop app for managing rental company.",
-  //   tags: ["Electron", "React", "Vite", "Tailwind", "SQLite", "Shadcn/ui"],
-  //   version: "demo",
-  //   available: false,
-  //   siteUrl: "",
-  //   codeUrl: "https://github.com/Garlikdev/DreamboatApp",
-  //   imageUrl: boatrentalImg,
-  // },
   {
     title: "Kacky.gg",
     time: "March 2024 - now",
@@ -52,11 +44,11 @@ export const projectsData = [
     tags: [
       "TypeScript",
       "React",
-      "Moving to Next.js",
+      "TailwindCSS",
       "Framer motion",
       "Python REST API",
       "Custom VPS",
-      "Live game server data exchange"
+      "CI/CD"
     ],
     version: "Live",
     available: true,
@@ -110,14 +102,14 @@ export const projectsData = [
     imageUrl: eloImg,
   },
   {
-    title: "Fullstack Food selling app",
+    title: "Fullstack e-commerce",
     time: "September 2021 - March 2023",
     description:
       "Precise price, weight and amount calculation panel per meal sets, enabling efficient wholesaler orders at the end of the week, reducing the need for user intervention down to one click.",
     tags: [
       "React",
       "Redux",
-      "Tailwind",
+      "TailwindCSS",
       "Node.js",
       "Express",
       "MongoDB",
@@ -132,23 +124,13 @@ export const projectsData = [
 ] as const
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
-] as const
+  { name: "TypeScript", description: "JavaScript but better", icon: "typescript" },
+  { name: "React", description: "JavaScript Library", icon: "react" },
+  { name: "Next.js", description: "React Framework", icon: "nextjs" },
+  { name: "Tailwind", description: "CSS Framework", icon: "tailwind" },
+  { name: "Node.js", description: "Runtime Environment", icon: "nodejs" },
+  { name: "Express", description: "Web Framework", icon: "express" },
+  { name: "Git", description: "Version Control", icon: "git" },
+  { name: "MongoDB", description: "Database", icon: "mongodb" },
+  { name: "PostgreSQL", description: "Database", icon: "postgresql" },
+] as const;

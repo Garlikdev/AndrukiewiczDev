@@ -18,12 +18,12 @@ export default function Introduction() {
     <section
       id='home'
       ref={ref}
-      className='h-screen scroll-mt-28 items-center justify-center flex flex-col gap-4 sm:gap-8 lg:gap-8'
+      className='h-fit sm:h-screen scroll-mt-28 items-center justify-center flex flex-col gap-4 sm:gap-8 lg:gap-8'
     >
-      <div className='flex flex-col-reverse sm:flex-row items-center justify-center'>
+      <div className='mt-24 sm:mt-0 flex flex-col-reverse sm:flex-row items-center justify-center'>
         <div className='max-w-xl flex flex-col relative'>
           <motion.div
-            className='mb-4 mt-4 sm:mt-0 text-center gap-4 flex flex-col lg:text-start relative'
+            className='mb-4 mt-4 sm:mt-0 text-center gap-4 flex flex-col sm:text-start relative'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
@@ -53,7 +53,7 @@ export default function Introduction() {
             </div>
           </motion.div>
           <motion.div
-            className='flex flex-col gap-4 sm:gap-8 items-center lg:items-start justify-center'
+            className='flex flex-col gap-4 sm:gap-8 items-center sm:items-start justify-center'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -80,7 +80,7 @@ export default function Introduction() {
                 <BsGithub className='w-8 h-8' />
               </a>
             </div>
-            <div className='flex gap-4'>
+            <div className='flex-col sm:flex-row items-center sm:items-start flex gap-4'>
               <Link
                 href='#contact'
                 className='px-4 py-2 text-xl group font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
@@ -146,53 +146,6 @@ export default function Introduction() {
           </motion.span>
         </div>
       </div>
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.2,
-        }}
-        className='flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full gap-4'
-      >
-        <p className='border-0 sm:border-r-2 border-r-gray-500 mr-0 pr-0 sm:mr-8 sm:pr-8'>
-          Tech Stack
-        </p>
-        <ul className='flex flex-row gap-1 sm:gap-4 items-center justify-center w-fit'>
-          <li
-            title='Html, Css, Javascript'
-            className='px-4 py-2 text-xl h-auto group font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
-          >
-            <Image
-              alt='Stack icons'
-              width={128}
-              height={256}
-              src='https://skillicons.dev/icons?i=html,css,js'
-            />
-          </li>
-          <li
-            title='React, Next.js, TailwindCSS'
-            className='px-4 py-2 text-xl h-auto group font-medium rounded-full bg-gray-100 shadow-highlight text-gray-50 dark:bg-gray-900 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
-          >
-            <Image
-              width={128}
-              height={256}
-              alt='Stack icons'
-              src='https://skillicons.dev/icons?i=react,next,tailwind'
-            />
-          </li>
-          <li
-            title='MongoDB, PostgreSQL, Prisma'
-            className='px-4 py-2 text-xl h-auto group font-medium rounded-full bg-gray-100 shadow-highlight text-gray-50 dark:bg-gray-900 flex items-center gap-2 outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
-          >
-            <Image
-              width={128}
-              height={256}
-              alt='Stack icons'
-              src='https://skillicons.dev/icons?i=mongodb,postgresql,prisma'
-            />
-          </li>
-        </ul>
-      </motion.div>
     </section>
   )
 }

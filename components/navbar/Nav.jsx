@@ -14,7 +14,7 @@ const Nav = () => {
   return (
     <header className='z-[999] relative'>
       <motion.div
-        className='fixed top-0 left-1/2 h-[3.25rem] overflow-hidden w-full rounded-b-lg shadow-highlight bg-white bg-opacity-80 sm:top-6 sm:w-[28rem] sm:rounded-full dark:bg-gray-950 dark:bg-opacity-75'
+        className='fixed top-0 left-1/2 h-[6rem] sm:h-[3.25rem] overflow-hidden w-full rounded-b-lg shadow-highlight bg-white bg-opacity-80 sm:top-6 sm:w-[34rem] sm:rounded-full dark:bg-gray-950 dark:bg-opacity-75'
         initial={{ y: -100, x: "-50%", opacity: 0, scale: 1 }}
         animate={{ y: 0, x: "-50%", opacity: 1, scale: 1 }}
         transition={{
@@ -25,11 +25,11 @@ const Nav = () => {
         <div className='rounded-full absolute h-48 w-[40rem] bg-gradient-radial blur-xl left-0 top-0 from-indigo-500 opacity-25 dark:opacity-25 rotate-12 to-neutral-900 -z-10'></div>
       </motion.div>
 
-      <nav className='flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0'>
-        <ul className='flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5'>
+      <nav className='flex fixed top-[0.15rem] left-1/2 h-12 w-3/4 sm:w-auto -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0'>
+        <ul className='flex w-full flex-wrap items-center justify-center gap-6 gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5'>
           {links.map((link) => (
             <motion.li
-              className='h-3/4 flex items-center justify-center relative'
+              className='h-full sm:h-3/4 flex items-center justify-center relative'
               key={link.hash}
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
