@@ -4,7 +4,7 @@ import Nav from "@components/navbar/Nav"
 import { Inter, Open_Sans } from "next/font/google"
 import ActiveSectionContextProvider from "@/context/active-section-context"
 import Footer from "@components/footer"
-import { GoogleTagManager } from "@next/third-parties/google"
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google"
 import Script from "next/script"
 
 export const metadata = {
@@ -35,7 +35,8 @@ export default function Layout({ children }) {
         <Footer />
       </body>
       <GoogleTagManager gtmId='GTM-5Q74XNRK' />
-      <Script src='https://www.googletagmanager.com/gtag/js?id=G-171W6BLZ9Y' />
+      <GoogleAnalytics gaId="G-171W6BLZ9Y" />
+      {/* <Script src='https://www.googletagmanager.com/gtag/js?id=G-171W6BLZ9Y' />
       <Script id='google-analytics'>
         {`
           window.dataLayer = window.dataLayer || [];
@@ -44,7 +45,8 @@ export default function Layout({ children }) {
  
           gtag('config', 'G-171W6BLZ9Y');
         `}
-      </Script>
+      </Script> */}
+      
     </html>
   )
 }
