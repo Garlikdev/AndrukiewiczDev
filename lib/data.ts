@@ -125,7 +125,7 @@ export const projectsData = [
     time: "June 2023",
     description: "The website you are currently looking at. It's mine.",
     tags: ["Next.js", "React", "Tailwind", "Framer motion", "React Icons"],
-    version: "Demo",
+    version: "Live",
     available: true,
     siteUrl: "https://andrukiewiczdev.vercel.app",
     codeUrl: "https://github.com/Garlikdev/AndrukiewiczDev",
