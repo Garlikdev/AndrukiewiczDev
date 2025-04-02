@@ -83,7 +83,7 @@ export default function Introduction() {
             <div className='flex-col sm:flex-row items-center sm:items-start flex gap-4'>
               <Link
                 href='#contact'
-                className='px-4 py-2 text-xl group font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+                className='px-4 py-2 text-xl group font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 flex items-center gap-2 w-fit outline-hidden focus:scale-110 hover:scale-110 transition-all active:scale-105'
                 onClick={() => {
                   setActiveSection("Contact")
                   setTimeOfLastClick(Date.now())
@@ -95,7 +95,7 @@ export default function Introduction() {
               <a
                 href='/CV_KrzysztofAndrukiewicz_ENG.pdf'
                 target='_blank'
-                className='px-4 py-2 text-xl font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 hover:bg-blue-600 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+                className='px-4 py-2 text-xl font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 hover:bg-blue-600 flex items-center gap-2 w-fit outline-hidden focus:scale-110 hover:scale-110 transition-all active:scale-105'
               >
                 CV English{" "}
                 <HiDownload className='opacity-80 group-hover:translate-x-1' />
@@ -103,7 +103,7 @@ export default function Introduction() {
               <a
                 href='/CV_KrzysztofAndrukiewicz_PL.pdf'
                 target='_blank'
-                className='px-4 py-2 text-xl font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 hover:bg-blue-600 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+                className='px-4 py-2 text-xl font-medium rounded-full bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50 hover:bg-blue-600 flex items-center gap-2 w-fit outline-hidden focus:scale-110 hover:scale-110 transition-all active:scale-105'
               >
                 CV Polski{" "}
                 <HiDownload className='opacity-80 group-hover:translate-x-1' />

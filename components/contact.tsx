@@ -36,7 +36,7 @@ export default function Contact() {
             aria-label='Contact me via email'
             className='p-3 rounded-full bg-gray-100 dark:bg-gray-900 group'
           >
-            <HiMail className='w-12 h-12 text-green-500 group-hover:text-gray-950 group-hover:dark:text-white transition-colors' />
+            <HiMail className='w-12 h-12 text-green-500 group-hover:text-gray-950 dark:group-hover:text-white transition-colors' />
           </a>
           <div className='flex flex-col gap-2'>
             <p className='font-bold text-xl'>Mail</p>

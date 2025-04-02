@@ -12,7 +12,7 @@ const Nav = () => {
     useActiveSectionContext()
 
   return (
-    <header className='z-[999] relative'>
+    <header className='z-999 relative'>
       <motion.div
         className='fixed top-0 left-1/2 h-[6rem] sm:h-[3.25rem] overflow-hidden w-full rounded-b-lg shadow-highlight bg-white bg-opacity-80 sm:top-6 sm:w-[34rem] sm:rounded-full dark:bg-gray-950 dark:bg-opacity-75'
         initial={{ y: -100, x: "-50%", opacity: 0, scale: 1 }}

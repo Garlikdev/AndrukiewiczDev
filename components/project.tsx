@@ -34,7 +34,7 @@ export default function Project({
     <motion.section
       style={{ scale: scaleProgress, opacity: opacityProgress }}
       ref={refScroll}
-      className='flex flex-col-reverse sm:flex-col group even:sm:flex-row-reverse transition-colors bg-gray-100 dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-50 hover:bg-gray-100 hover:dark:bg-gray-900 max-w-[42rem] border border-black/5 overflow-hidden sm:pr-8 relative sm:h-fit shadow-highlight rounded-2xl'
+      className='flex flex-col-reverse sm:flex-col group sm:even:flex-row-reverse transition-colors bg-gray-100 dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-50 hover:bg-gray-100 dark:hover:bg-gray-900 max-w-[42rem] border border-black/5 overflow-hidden sm:pr-8 relative sm:h-fit shadow-highlight rounded-2xl'
     >
       <div
         className='py-4 px-5 sm:pl-10 sm:pr-2 sm:py-10 sm:max-w-[50%] flex flex-col h-full items-center text-center sm:items-start sm:text-start'
@@ -60,7 +60,7 @@ export default function Project({
               href={codeUrl}
               target='_blank'
               rel='noreferrer'
-              className='px-2 py-1 font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+              className='px-2 py-1 font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 w-fit outline-hidden focus:scale-110 hover:scale-110 transition-all active:scale-105'
             >
               Code <BsGithub />
             </Link>
@@ -72,7 +72,7 @@ export default function Project({
               href={siteUrl}
               target='_blank'
               rel='noreferrer'
-              className='px-2 py-1 font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+              className='px-2 py-1 font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 w-fit outline-hidden focus:scale-110 hover:scale-110 transition-all active:scale-105'
             >
               {version} <BsLink />
             </Link>
@@ -83,7 +83,7 @@ export default function Project({
                 setActiveSection("Contact")
                 setTimeOfLastClick(Date.now())
               }}
-              className='px-2 py-1 font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 w-fit outline-none focus:scale-110 hover:scale-110 transition-all active:scale-105'
+              className='px-2 py-1 font-medium rounded-full bg-gray-900 text-gray-50 dark:bg-gray-50 dark:text-gray-900 flex items-center gap-2 w-fit outline-hidden focus:scale-110 hover:scale-110 transition-all active:scale-105'
             >
               Ask for more
             </Link>
@@ -94,7 +94,7 @@ export default function Project({
         src={imageUrl}
         alt={title}
         quality={95}
-        className='relative m-4 sm:m-0 sm:absolute object-left-top object-cover h-[15rem] sm:h-[25rem] top-0 sm:top-16 sm:group-odd:-right-40 sm:group-even:-left-40 w-auto sm:w-[28.25rem] rounded-lg shadow-highlight sm:group-hover:-translate-x-3 sm:group-even:group-hover:translate-x-3 sm:group-hover:translate-y-3 sm:group-hover:-rotate-2 sm:group-even:group-hover:rotate-2 transition-all duration-300 ease-in-out'
+        className='relative m-4 sm:m-0 sm:absolute object-left-top object-cover h-[15rem] sm:h-[25rem] top-0 sm:top-16 sm:group-odd:-right-40 sm:group-even:-left-40 w-auto sm:w-[28.25rem] rounded-lg shadow-highlight sm:group-hover:-translate-x-3 sm:group-hover:group-even:translate-x-3 sm:group-hover:translate-y-3 sm:group-hover:-rotate-2 sm:group-hover:group-even:rotate-2 transition-all duration-300 ease-in-out'
       ></Image>
     </motion.section>
   )
