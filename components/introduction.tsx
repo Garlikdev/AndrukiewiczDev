@@ -11,7 +11,7 @@ import { useActiveSectionContext } from "@context/active-section-context"
 
 export default function Introduction() {
   const { ref } = useSectionInView("Home", 0.5)
-  const { activeSection, setActiveSection, setTimeOfLastClick } =
+  const { setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext()
 
   return (
@@ -142,7 +142,7 @@ export default function Introduction() {
               duration: 0.7,
             }}
           >
-            😘
+            😊
           </motion.span>
         </div>
       </div>

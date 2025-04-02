@@ -4,6 +4,9 @@ import kanbanImg from "@public/trollo_small.webp"
 import coffeepandaImg from "@public/coffeepanda.webp"
 import oldroadImg from "@public/oldroad.webp"
 import kackyImg from "@public/kacky.webp"
+import dnbonthebikeImg from "@public/dnbonthebike.webp"
+import portfolioImg from "@public/portfolio.webp"
+import maprequestbotImg from "@public/maprequestbot.webp"
 
 export const links = [
   {
@@ -38,6 +41,23 @@ export const links = [
 
 export const projectsData = [
   {
+    title: "Discord bot",
+    time: "March 2024 - now",
+    description: "Bot is gathering specific links from trackmania exchange so streamer can later copy all unplayed map ids.",
+    tags: [
+      "JavaScript",
+      "CommandKit",
+      "Discord.js",
+      "PostgreSQL",
+      "Sequelize",
+      "Custom VPS",
+    ],
+    version: "Live",
+    available: false,
+    siteUrl: "",
+    codeUrl: "https://github.com/Garlikdev/kacky-eventpage-frontend",
+    imageUrl: maprequestbotImg,
+  },{
     title: "Kacky.gg",
     time: "March 2024 - now",
     description: "Trackmania event site. Built by players for players. Group of amazing people spread worldwide creating amazing content for streamers and casual gamers.",
@@ -57,9 +77,20 @@ export const projectsData = [
     imageUrl: kackyImg,
   },
   {
+    title: "Dnb On The Bike",
+    time: "July 2024",
+    description: "Fan page for Dom Whiting / DJ, Youtuber with tracklist/player functionality.",
+    tags: ["Next.js", "React", "Tailwind", "Shadcn/UI", "React Player"],
+    version: "Demo",
+    available: true,
+    siteUrl: "https://dnbonthebike.vercel.app/",
+    codeUrl: "https://github.com/Garlikdev/dnbonthebike",
+    imageUrl: dnbonthebikeImg,
+  },
+  {
     title: "Barber Shop",
     time: "January 2024",
-    description: "Clean, not yet animated site for local Barber Shop.",
+    description: "Clean, original site for local Barber Shop.",
     tags: ["Next.js", "React", "Tailwind", "Framer motion"],
     version: "Demo",
     available: true,
@@ -90,15 +121,26 @@ export const projectsData = [
     imageUrl: kanbanImg,
   },
   {
+    title: "This portfolio",
+    time: "June 2023",
+    description: "The website you are currently looking at. It's mine.",
+    tags: ["Next.js", "React", "Tailwind", "Framer motion", "React Icons"],
+    version: "Live",
+    available: true,
+    siteUrl: "https://andrukiewiczdev.vercel.app",
+    codeUrl: "https://github.com/Garlikdev/AndrukiewiczDev",
+    imageUrl: portfolioImg,
+  },
+  {
     title: "Fullstack e-commerce",
     time: "March 2023 - June 2023",
     description:
       "An automated shipping system generates packages for every order and manages products, saving the client about 70% of the time compared to their previous system where packages had to be created manually.",
     tags: ["React", "Tailwind", "Node.js", "Express", "Hotpay", "PostgreSQL"],
-    version: "Live",
+    version: "Demo",
     available: true,
     siteUrl: "https://elopokrowce.pl/",
-    codeUrl: "",
+    codeUrl: "https://github.com/Garlikdev/EloReact",
     imageUrl: eloImg,
   },
   {
