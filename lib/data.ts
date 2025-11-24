@@ -1,12 +1,12 @@
-import klikImg from "@public/klik.webp"
-import eloImg from "@public/elopokrowce_small.webp"
-import kanbanImg from "@public/trollo_small.webp"
-import coffeepandaImg from "@public/coffeepanda.webp"
-import oldroadImg from "@public/oldroad.webp"
-import kackyImg from "@public/kacky.webp"
-import dnbonthebikeImg from "@public/dnbonthebike.webp"
-import portfolioImg from "@public/portfolio.webp"
-import maprequestbotImg from "@public/maprequestbot.webp"
+import klikImg from "@public/klik.webp";
+import eloImg from "@public/elopokrowce_small.webp";
+import kanbanImg from "@public/trollo_small.webp";
+import coffeepandaImg from "@public/coffeepanda.webp";
+import oldroadImg from "@public/oldroad.webp";
+import kackyImg from "@public/kacky.webp";
+import dnbonthebikeImg from "@public/dnbonthebike.webp";
+import portfolioImg from "@public/portfolio.webp";
+import maprequestbotImg from "@public/maprequestbot.webp";
 
 export const links = [
   {
@@ -15,7 +15,7 @@ export const links = [
   },
   {
     name: "Stack",
-    hash: "/#stack"
+    hash: "/#stack",
   },
   {
     name: "About",
@@ -37,13 +37,37 @@ export const links = [
     name: "Contact",
     hash: "/#contact",
   },
-] as const
+] as const;
 
 export const projectsData = [
   {
-    title: "Discord bot",
+    title: "Kacky.gg",
     time: "March 2024 - now",
-    description: "Bot is gathering specific links from trackmania exchange so streamer can later copy all unplayed map ids.",
+    description:
+      "Trackmania event site. Built by players for players. Group of amazing people spread worldwide creating amazing content for streamers and casual gamers.",
+    tags: [
+      "TypeScript",
+      "React",
+      "TailwindCSS",
+      "Framer motion",
+      "Node REST API",
+      "Custom VPS",
+      "CI/CD",
+      "Ansible",
+      "Pulumi",
+      "Docker",
+    ],
+    version: "Live",
+    available: true,
+    siteUrl: "https://kacky.gg",
+    codeUrl: "https://github.com/Garlikdev/kacky-eventpage-frontend",
+    imageUrl: kackyImg,
+  },
+  {
+    title: "Discord bot",
+    time: "March 2024",
+    description:
+      "Bot is gathering specific links from trackmania exchange so streamer can later copy all unplayed map ids.",
     tags: [
       "JavaScript",
       "CommandKit",
@@ -57,29 +81,12 @@ export const projectsData = [
     siteUrl: "",
     codeUrl: "https://github.com/Garlikdev/kacky-eventpage-frontend",
     imageUrl: maprequestbotImg,
-  },{
-    title: "Kacky.gg",
-    time: "March 2024 - now",
-    description: "Trackmania event site. Built by players for players. Group of amazing people spread worldwide creating amazing content for streamers and casual gamers.",
-    tags: [
-      "TypeScript",
-      "React",
-      "TailwindCSS",
-      "Framer motion",
-      "Python REST API",
-      "Custom VPS",
-      "CI/CD"
-    ],
-    version: "Live",
-    available: true,
-    siteUrl: "https://kacky.gg",
-    codeUrl: "https://github.com/Garlikdev/kacky-eventpage-frontend",
-    imageUrl: kackyImg,
   },
   {
     title: "Dnb On The Bike",
     time: "July 2024",
-    description: "Fan page for Dom Whiting / DJ, Youtuber with tracklist/player functionality.",
+    description:
+      "Fan page for Dom Whiting / DJ, Youtuber with tracklist/player functionality.",
     tags: ["Next.js", "React", "Tailwind", "Shadcn/UI", "React Player"],
     version: "Demo",
     available: true,
@@ -135,7 +142,7 @@ export const projectsData = [
     title: "Fullstack e-commerce",
     time: "March 2023 - June 2023",
     description:
-      "An automated shipping system generates packages for every order and manages products, saving the client about 70% of the time compared to their previous system where packages had to be created manually.",
+      "Online shop with admin panel, product management, order management, saving the client about 70% of the time compared to their previous system where orders had to be managed through phone calls.",
     tags: ["React", "Tailwind", "Node.js", "Express", "Hotpay", "PostgreSQL"],
     version: "Demo",
     available: true,
@@ -163,16 +170,20 @@ export const projectsData = [
     codeUrl: "https://github.com/Andrukiewicz/FreshCuisine",
     imageUrl: klikImg,
   },
-] as const
+] as const;
 
 export const skillsData = [
-  { name: "TypeScript", description: "JavaScript but better", icon: "typescript" },
+  {
+    name: "TypeScript",
+    description: "JavaScript but better",
+    icon: "typescript",
+  },
   { name: "React", description: "JavaScript Library", icon: "react" },
   { name: "Next.js", description: "React Framework", icon: "nextjs" },
   { name: "Tailwind", description: "CSS Framework", icon: "tailwind" },
   { name: "Node.js", description: "Runtime Environment", icon: "nodejs" },
   { name: "Express", description: "Web Framework", icon: "express" },
   { name: "Git", description: "Version Control", icon: "git" },
-  { name: "MongoDB", description: "Database", icon: "mongodb" },
   { name: "PostgreSQL", description: "Database", icon: "postgresql" },
+  { name: "Docker", description: "Containerization", icon: "docker" },
 ] as const;

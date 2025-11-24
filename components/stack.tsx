@@ -56,28 +56,28 @@ export default function Stack() {
         className="flex flex-col sm:flex-row items-center justify-center w-full gap-4"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center justify-between gap-4">
-      {skillsData.map((skill) => (
-        <div
-          key={skill.name}
-          className="flex flex-1 gap-5 p-2.5 rounded-xl items-center bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50  transition-colors duration-200"
-        >
-          <div className="p-3 rounded-lg w-16 h-16">
-            <Image
-              width={128}
-              height={128}
-              alt={`${skill.name} icon`}
-              src={`https://skillicons.dev/icons?i=${skill.icon}`}
-            />
-          </div>
-          <div className="items-center justify-center">
-            <h4 className="text-lg font-medium">{skill.name}</h4>
-            <p className="text-dark-200/70 dark:text-white/70 text-sm">
-              {skill.description}
-            </p>
-          </div>
+          {skillsData.map((skill) => (
+            <div
+              key={skill.name}
+              className="flex flex-1 gap-5 p-2.5 rounded-xl items-center bg-gray-100 shadow-highlight text-gray-950 dark:bg-gray-900 dark:text-gray-50  transition-colors duration-200"
+            >
+              <div className="p-3 rounded-lg w-16 h-16">
+                <Image
+                  width={128}
+                  height={128}
+                  alt={`${skill.name} icon`}
+                  src={`https://skillicons.dev/icons?i=${skill.icon}`}
+                />
+              </div>
+              <div className="items-center justify-center">
+                <h4 className="text-lg font-medium">{skill.name}</h4>
+                <p className="text-dark-200/70 dark:text-white/70 text-sm">
+                  {skill.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
       </motion.div>
     </section>
   );
