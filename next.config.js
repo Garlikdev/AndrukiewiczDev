@@ -2,6 +2,7 @@
 const nextConfig = {
   images: {
     dangerouslyAllowSVG: true,
+    qualities: [75, 95],
     remotePatterns: [
       {
         protocol: "https",
@@ -11,6 +12,6 @@ const nextConfig = {
       },
     ],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
